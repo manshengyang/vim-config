@@ -16,6 +16,6 @@
 [submodule "submodules/minibufexpl"]
 	path = submodules/minibufexpl
 	url = https://github.com/sontek/minibufexpl.vim.git
-[submodule "submodules/nerd-tree"]
-	path = submodules/nerd-tree
-	url = https://github.com/vim-scripts/The-NERD-tree.git
+[submodule "submodules/nerdtree"]
+	path = submodules/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
