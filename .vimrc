@@ -22,3 +22,4 @@ let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 
 nnoremap <F4> :TlistToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
