@@ -1,0 +1,3 @@
+[submodule "submodules/neocomplcache"]
+	path = submodules/neocomplcache
+	url = https://github.com/Shougo/neocomplcache.git
