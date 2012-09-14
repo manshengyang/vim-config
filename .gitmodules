@@ -13,3 +13,9 @@
 [submodule "submodules/vim-commentary"]
 	path = submodules/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "submodules/minibufexpl"]
+	path = submodules/minibufexpl
+	url = https://github.com/sontek/minibufexpl.vim.git
+[submodule "submodules/nerd-tree"]
+	path = submodules/nerd-tree
+	url = https://github.com/vim-scripts/The-NERD-tree.git
