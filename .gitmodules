@@ -19,3 +19,6 @@
 [submodule "submodules/nerdtree"]
 	path = submodules/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "submodules/ack"]
+	path = submodules/ack
+	url = https://github.com/mileszs/ack.vim.git
