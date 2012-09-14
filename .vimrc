@@ -17,3 +17,6 @@ source ~/.vim/conf/neocomplcache.vim
 
 colo wombat
 let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
+
+nnoremap <F4> :TlistToggle<CR>
+nnoremap <F5> :GundoToggle<CR>
