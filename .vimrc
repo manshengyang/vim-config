@@ -4,6 +4,8 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set switchbuf=useopen
+set foldmethod=indent
+set foldlevel=99
 filetype plugin indent on
 syntax on
 
