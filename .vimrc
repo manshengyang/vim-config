@@ -24,3 +24,5 @@ source ~/.vim/conf/neocomplcache.vim
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :TlistToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
+
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
