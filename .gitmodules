@@ -25,3 +25,6 @@
 [submodule "submodules/mustache"]
 	path = submodules/mustache
 	url = git://github.com/juvenn/mustache.vim.git
+[submodule "submodules/vim-rails"]
+	path = submodules/vim-rails
+	url = https://github.com/tpope/vim-rails.git
