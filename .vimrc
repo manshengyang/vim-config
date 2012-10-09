@@ -8,8 +8,11 @@ set switchbuf=useopen
 set foldmethod=indent
 set foldlevel=99
 filetype plugin indent on
-syntax on
 colo wombat
+
+syntax on
+highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
+autocmd Syntax * syn match ExtraWhitespace /\s\+$/
 
 set incsearch
 set hlsearch
@@ -26,3 +29,7 @@ nnoremap <F4> :TlistToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
 
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
