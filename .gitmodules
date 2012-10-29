@@ -28,9 +28,6 @@
 [submodule "submodules/vim-rails"]
 	path = submodules/vim-rails
 	url = https://github.com/tpope/vim-rails.git
-[submodule "submodules/vim-js"]
-	path = submodules/vim-js
-	url = https://github.com/jelera/vim-javascript-syntax.git
 [submodule "submodules/html5.vim"]
 	path = submodules/html5.vim
 	url = https://github.com/othree/html5.vim.git
