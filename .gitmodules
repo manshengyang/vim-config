@@ -34,3 +34,6 @@
 [submodule "submodules/vim-javascript"]
 	path = submodules/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "submodules/cocoa"]
+	path = submodules/cocoa
+	url = https://github.com/msanders/cocoa.vim.git
