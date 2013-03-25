@@ -32,6 +32,7 @@ autocmd FileType scss setlocal shiftwidth=4 tabstop=4
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType mustache setlocal shiftwidth=2 tabstop=2
+autocmd FileType ocaml setlocal shiftwidth=2 tabstop=2
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%121v.\+/
