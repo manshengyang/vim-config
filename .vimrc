@@ -33,6 +33,7 @@ autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType mustache setlocal shiftwidth=2 tabstop=2
 autocmd FileType ocaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal filetype=html.javascript
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%121v.\+/
