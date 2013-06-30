@@ -37,3 +37,6 @@
 [submodule "submodules/cocoa"]
 	path = submodules/cocoa
 	url = https://github.com/msanders/cocoa.vim.git
+[submodule "submodules/vim-slim"]
+	path = submodules/vim-slim
+	url = https://github.com/slim-template/vim-slim.git
