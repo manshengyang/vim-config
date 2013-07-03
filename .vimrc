@@ -1,7 +1,6 @@
 set number
 set tabstop=4
 set shiftwidth=4
-set cindent
 set smarttab
 set expandtab
 set switchbuf=useopen
@@ -28,12 +27,8 @@ nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :TlistToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
 
-autocmd FileType scss setlocal shiftwidth=4 tabstop=4
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType mustache setlocal shiftwidth=2 tabstop=2
-autocmd FileType ocaml setlocal shiftwidth=2 tabstop=2
-autocmd FileType html setlocal filetype=html.javascript
+au BufEnter,BufNew *.rabl setlocal filetype=ruby
+autocmd FileType eruby,ruby,ocaml,yaml,scss,javascript,coffee,mustache,html setlocal shiftwidth=2 tabstop=2
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%121v.\+/
