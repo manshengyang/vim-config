@@ -40,3 +40,9 @@
 [submodule "submodules/vim-slim"]
 	path = submodules/vim-slim
 	url = https://github.com/slim-template/vim-slim.git
+[submodule "submodules/vim-session"]
+	path = submodules/vim-session
+	url = https://github.com/xolox/vim-session.git
+[submodule "submodules/vim-misc"]
+	path = submodules/vim-misc
+	url = https://github.com/xolox/vim-misc.git

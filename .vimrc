@@ -39,3 +39,6 @@ match OverLength /\%121v.\+/
 " " insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
