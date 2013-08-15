@@ -29,6 +29,7 @@ nnoremap <F5> :GundoToggle<CR>
 
 au BufEnter,BufNew *.rabl setlocal filetype=ruby
 au BufEnter,BufNew Gemfile setlocal filetype=ruby
+au BufEnter,BufNew *.jbuilder setlocal filetype=ruby
 autocmd FileType eruby,ruby,ocaml,yaml,scss,javascript,coffee,mustache,html setlocal shiftwidth=2 tabstop=2
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
