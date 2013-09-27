@@ -30,10 +30,12 @@ nnoremap <F5> :GundoToggle<CR>
 au BufEnter,BufNew *.rabl setlocal filetype=ruby
 au BufEnter,BufNew Gemfile setlocal filetype=ruby
 au BufEnter,BufNew *.jbuilder setlocal filetype=ruby
-autocmd FileType eruby,ruby,ocaml,yaml,scss,javascript,coffee,mustache,html setlocal shiftwidth=2 tabstop=2
+au BufEnter,BufNew *.html.slim setlocal filetype=slim
+au FileType eruby,ruby,ocaml,yaml,scss,javascript,coffee,mustache,html setlocal shiftwidth=2 tabstop=2
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%121v.\+/
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%121v.\+/
+set cc=120
 
 " If you prefer the Omni-Completion tip window to close when a selection is
 " " made, these lines close it on movement in insert mode or when leaving
