@@ -20,6 +20,7 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 call pathogen#infect('~/.vim/submodules/')
+set rtp+=~/.vim/submodules/powerline/powerline/bindings/vim
 
 source ~/.vim/conf/neocomplcache.vim
 
