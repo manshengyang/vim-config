@@ -46,10 +46,11 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
-let g:Powerline_symbols = 'fancy'
 
 " powerline
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
 set laststatus=2
+set noshowmode
+let g:Powerline_symbols = 'fancy'
