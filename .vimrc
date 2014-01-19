@@ -7,6 +7,7 @@ set expandtab
 set switchbuf=useopen
 set foldmethod=indent
 set foldlevel=99
+set backspace=2 " make backspace work like most other apps
 filetype plugin indent on
 colo wombat
 
