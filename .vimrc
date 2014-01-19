@@ -1,3 +1,4 @@
+set encoding=utf-8
 set number
 set tabstop=4
 set shiftwidth=4
@@ -20,7 +21,6 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 call pathogen#infect('~/.vim/submodules/')
-set rtp+=~/.vim/submodules/powerline/powerline/bindings/vim
 
 source ~/.vim/conf/neocomplcache.vim
 
@@ -46,3 +46,10 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
+let g:Powerline_symbols = 'fancy'
+
+" powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+set laststatus=2

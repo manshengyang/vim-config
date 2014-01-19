@@ -46,6 +46,3 @@
 [submodule "submodules/vim-misc"]
 	path = submodules/vim-misc
 	url = https://github.com/xolox/vim-misc.git
-[submodule "submodules/powerline"]
-	path = submodules/powerline
-	url = https://github.com/Lokaltog/powerline.git
