@@ -8,6 +8,7 @@ set switchbuf=useopen
 set foldmethod=indent
 set foldlevel=99
 set backspace=2 " make backspace work like most other apps
+set ic
 filetype plugin indent on
 colo wombat
 
@@ -55,3 +56,7 @@ python del powerline_setup
 set laststatus=2
 set noshowmode
 let g:Powerline_symbols = 'fancy'
+
+" Command+T
+nnoremap <silent> ,t :CommandT<CR>
+nnoremap <silent> ,b :CommandTBuffer<CR>

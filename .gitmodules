@@ -46,3 +46,9 @@
 [submodule "submodules/vim-misc"]
 	path = submodules/vim-misc
 	url = https://github.com/xolox/vim-misc.git
+[submodule "submodules/vim-fugitive"]
+	path = submodules/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "submodules/command-t"]
+	path = submodules/command-t
+	url = https://github.com/wincent/Command-T.git
