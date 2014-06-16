@@ -1,7 +1,7 @@
 set encoding=utf-8
 set number
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set smarttab
 set expandtab
 set switchbuf=useopen
@@ -9,6 +9,7 @@ set foldmethod=indent
 set foldlevel=99
 set backspace=2 " make backspace work like most other apps
 set ic
+set cc=80
 filetype plugin indent on
 colo wombat
 
@@ -34,11 +35,6 @@ au BufEnter,BufNew *.rabl setlocal filetype=ruby
 au BufEnter,BufNew Gemfile setlocal filetype=ruby
 au BufEnter,BufNew *.jbuilder setlocal filetype=ruby
 au BufEnter,BufNew *.html.slim setlocal filetype=slim
-au FileType eruby,ruby,ocaml,yaml,scss,javascript,coffee,mustache,html setlocal shiftwidth=2 tabstop=2
-
-" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-" match OverLength /\%121v.\+/
-set cc=120
 
 " If you prefer the Omni-Completion tip window to close when a selection is
 " " made, these lines close it on movement in insert mode or when leaving
