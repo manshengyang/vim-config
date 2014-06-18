@@ -73,7 +73,7 @@ nnoremap <leader>s :%s/
 " reload this file
 nnoremap <Leader>rl :e %<cr>
 " edit vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<CR>G
+nnoremap <leader>ev :rightbelow vsplit $MYVIMRC<CR>G
 " source vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " }}}
@@ -106,3 +106,6 @@ augroup filetype_mappings
   au BufEnter,BufNew *.jbuilder setlocal filetype=ruby
   au BufEnter,BufNew *.html.slim setlocal filetype=slim
 augroup END
+
+" edit prev buffer
+nnoremap <Leader>eb :execute "rightbelow vsplit " . bufname("#")<cr>
