@@ -1,6 +1,7 @@
 set nocompatible
 source ~/.vim/conf/google.vim
 
+" basic config
 set encoding=utf-8
 set number
 set relativenumber
@@ -11,8 +12,10 @@ set expandtab
 set switchbuf=useopen
 set foldmethod=indent
 set foldlevel=99
-set backspace=2 " make backspace work like most other apps
+" make backspace work like most other apps
+set backspace=2
 set ic
+set cc=80
 filetype plugin indent on
 set cc=80
 colo wombat
@@ -21,13 +24,20 @@ let mapleader = ","
 let maplocalleader = "\\"
 
 syntax on
+augroup trailing_space_syntax
+  au!
+  au Syntax * syn match ExtraWhitespace /\s\+$/
+augroup END
+
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
-autocmd Syntax * syn match ExtraWhitespace /\s\+$/
 
 set incsearch
 set hlsearch
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+let mapleader = ','
+let maplocalleader = '\\'
 
 let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 call pathogen#infect('~/.vim/submodules/')
@@ -49,6 +59,7 @@ nnoremap <F5> :GundoToggle<CR>
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
 
+" beginning and end of the line
 nnoremap H ^
 nnoremap L $
 
@@ -57,11 +68,8 @@ nmap <leader>" ysiw"
 nmap <leader>' ysiw'
 vnoremap <leader>" <esc>a"<esc>`<i"<esc>`>ll
 vnoremap <leader>' <esc>a'<esc>`<i'<esc>`>ll
+" start substitution
 nnoremap <leader>s :%s/
-nnoremap <leader>q :q<cr>
-nnoremap <Leader>w :w<cr>
-nnoremap <Leader>qa :qa<cr>
-nnoremap <Leader>wq :wq<cr>
 " reload this file
 nnoremap <Leader>rl :e %<cr>
 " edit vimrc
@@ -69,8 +77,6 @@ nnoremap <leader>ev :vsplit $MYVIMRC<CR>G
 " source vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " }}}
-
-iabbrev @@ mansheng@google.com
 
 inoremap <c-d> <esc>dd
 inoremap <c-b> <esc>viwUea
@@ -92,3 +98,11 @@ onoremap il( :<c-u>normal! F)vi<cr>
 onoremap an( :<c-u>normal! f(va(<cr>
 onoremap al( :<c-u>normal! F)va(<cr>
 onoremap n@ :<c-u>execute "normal! /\\S\\+@\\S\\+\\.\\w\\+\r:nohlsearch\rv5e"<cr>
+
+augroup filetype_mappings
+  au!
+  au BufEnter,BufNew *.rabl setlocal filetype=ruby
+  au BufEnter,BufNew Gemfile setlocal filetype=ruby
+  au BufEnter,BufNew *.jbuilder setlocal filetype=ruby
+  au BufEnter,BufNew *.html.slim setlocal filetype=slim
+augroup END
