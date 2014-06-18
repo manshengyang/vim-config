@@ -114,3 +114,9 @@ nnoremap <Leader>eb :execute "rightbelow vsplit " . bufname("#")<cr>
 inoremap <c-g> <c-g>
 " trigger abbreviations and break undo on each <cr>
 inoremap <cr> <c-]><c-g>u<cr>
+
+" append ; at the end of current line
+nnoremap <Leader>a; mqA;<Esc>`q
+
+" remove trailing space
+nnoremap <Leader>d<Space> mq^$bldw`q
