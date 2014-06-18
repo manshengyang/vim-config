@@ -109,3 +109,8 @@ augroup END
 
 " edit prev buffer
 nnoremap <Leader>eb :execute "rightbelow vsplit " . bufname("#")<cr>
+
+" I have no idea who breaks <C-G>, but I want it back
+inoremap <c-g> <c-g>
+" trigger abbreviations and break undo on each <cr>
+inoremap <cr> <c-]><c-g>u<cr>
