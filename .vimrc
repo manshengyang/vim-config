@@ -78,7 +78,6 @@ nnoremap <leader>ev :rightbelow vsplit $MYVIMRC<CR>G
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " }}}
 
-inoremap <c-d> <esc>dd
 inoremap <c-b> <esc>viwUea
 
 " Command+T {{{
