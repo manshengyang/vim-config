@@ -120,3 +120,10 @@ nnoremap <Leader>a; mqA;<Esc>`q
 
 " remove trailing space
 nnoremap <Leader>d<Space> mq^$bldw`q
+
+" tabs
+nnoremap <c-n> gt
+nnoremap <c-p> gT
+
+" copy
+vnoremap <c-v> "*y

@@ -19,7 +19,7 @@
 [submodule "submodules/ack"]
 	path = submodules/ack
 	url = https://github.com/mileszs/ack.vim.git
-    ignore = dirty
+  ignore = dirty
 [submodule "submodules/vim-coffee-script"]
 	path = submodules/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
@@ -38,6 +38,7 @@
 [submodule "submodules/cocoa"]
 	path = submodules/cocoa
 	url = https://github.com/msanders/cocoa.vim.git
+  ignore = dirty
 [submodule "submodules/vim-slim"]
 	path = submodules/vim-slim
 	url = https://github.com/slim-template/vim-slim.git
@@ -53,4 +54,4 @@
 [submodule "submodules/command-t"]
 	path = submodules/command-t
 	url = https://github.com/wincent/Command-T.git
-    ignore = dirty
+  ignore = dirty
