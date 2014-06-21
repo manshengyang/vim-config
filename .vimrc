@@ -17,7 +17,6 @@ set backspace=2
 set ic
 set cc=80
 filetype plugin indent on
-set cc=80
 colo wombat
 
 let mapleader = ","

@@ -54,11 +54,11 @@ set statusline+=%{strlen(fugitive#statusline())>0?'\ ':''}
 set statusline+=%{matchstr(fugitive#statusline(),'(\\zs.*\\ze)')}
 set statusline+=%{strlen(fugitive#statusline())>0?'\ ':'\ '}
 set statusline+=%f\ %{&ro?'':''}%{&mod?'+':''}%<
-" set statusline+=%4*
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%4*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%=
-" set statusline+=%4*
+set statusline+=%4*
 set statusline+=%#StatusLine#
 set statusline+=\ %{strlen(&fileformat)>0?&fileformat.'\ \>\ ':''}
 set statusline+=%{strlen(&fileencoding)>0?&fileencoding.'\ \>\ ':''}
