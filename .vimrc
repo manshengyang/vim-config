@@ -76,13 +76,25 @@ nnoremap <Leader>rl :e %<cr>
 nnoremap <leader>ev :rightbelow vsplit $MYVIMRC<CR>G
 " source vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
-" }}}
-
-inoremap <c-b> <esc>viwUea
-
-" Command+T {{{
+" Command+T
 nnoremap <silent> <leader>t :CommandT<CR>
 nnoremap <silent> <leader>b :CommandTBuffer<CR>
+" edit prev buffer
+nnoremap <Leader>eb :execute "rightbelow vsplit " . bufname("#")<cr>
+" append ; at the end of current line
+nnoremap <Leader>a; mqA;<Esc>`q
+" remove trailing space
+nnoremap <Leader>d<Space> mq^$bldw`q
+" new tab
+nnoremap <Leader>T :tabnew<CR>
+" help
+nnoremap <Leader>h :help 
+" write
+nnoremap <Leader>w :w<CR>
+" quit
+nnoremap <Leader>q :q<CR>
+" write and quit
+nnoremap <Leader>wq :wq<CR>
 " }}}
 
 " Vimscript file settings {{{
@@ -106,19 +118,11 @@ augroup filetype_mappings
   au BufEnter,BufNew *.html.slim setlocal filetype=slim
 augroup END
 
-" edit prev buffer
-nnoremap <Leader>eb :execute "rightbelow vsplit " . bufname("#")<cr>
-
 " I have no idea who breaks <C-G>, but I want it back
 inoremap <c-g> <c-g>
 " trigger abbreviations and break undo on each <cr>
 inoremap <cr> <c-]><c-g>u<cr>
-
-" append ; at the end of current line
-nnoremap <Leader>a; mqA;<Esc>`q
-
-" remove trailing space
-nnoremap <Leader>d<Space> mq^$bldw`q
+inoremap <c-b> <esc>viwUea
 
 " tabs
 nnoremap <c-n> gt
@@ -126,3 +130,42 @@ nnoremap <c-p> gT
 
 " copy
 vnoremap <c-v> "*y
+
+" magic search
+nnoremap / /\v
+nnoremap ? ?\v
+
+" cnext, cprevious
+" nnoremap <c-N> :cn<CR>
+" nnoremap <c-P> :cp<CR>
+
+" up, down in cmdline
+cnoremap <c-n> <Down>
+cnoremap <c-p> <Up>
+cnoremap <c-j> <Left>
+cnoremap <c-l> <Right>
+
+" foldcolumn
+nnoremap <leader>fc :call FoldColumnToggle()<CR>
+function! FoldColumnToggle()
+  if &foldcolumn
+    setlocal foldcolumn=0
+  else
+    setlocal foldcolumn=4
+  endif
+endfunction
+
+" quickfix window
+nnoremap <Leader>qf :call QuickfixToggle()<CR>
+let g:quickfix_is_open = 0
+function! QuickfixToggle()
+  if g:quickfix_is_open
+    cclose
+    let g:quickfix_is_open = 0
+    execute g:quickfix_return_to_window . "wincmd w"
+  else
+    let g:quickfix_return_to_window = winnr()
+    copen
+    let g:quickfix_is_open = 1
+  endif
+endfunction
