@@ -17,7 +17,7 @@ set backspace=2
 set ic
 set cc=80
 filetype plugin indent on
-colo wombat
+colo wombat256mod
 
 let mapleader = ","
 let maplocalleader = "\\"
