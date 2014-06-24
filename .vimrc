@@ -77,8 +77,8 @@ nnoremap <Leader>ev :rightbelow vsplit $MYVIMRC<CR>G
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 " Command+T
 nnoremap <silent> <Leader>t :CommandT<CR>
-nnoremap <silent> <Leader>tb :CommandTBuffer<CR>
-nnoremap <silent> <Leader>tf :CommandTFlush<CR>
+nnoremap <silent> <Leader>bt :CommandTBuffer<CR>
+nnoremap <silent> <Leader>ft :CommandTFlush<CR>
 " edit prev buffer
 nnoremap <Leader>eb :execute "rightbelow vsplit " . bufname("#")<cr>
 " append ; at the end of current line
@@ -93,8 +93,9 @@ nnoremap <Leader>h :help
 nnoremap <Leader>w :w<CR>
 " quit
 nnoremap <Leader>q :q<CR>
-" write and quit
-nnoremap <Leader>wq :wq<CR>
+
+nnoremap <Leader>fc :call FoldColumnToggle()<CR>
+nnoremap <Leader>fq :call QuickfixToggle()<CR>
 " }}}
 
 " Vimscript file settings {{{
@@ -146,7 +147,6 @@ cnoremap <c-j> <Left>
 cnoremap <c-l> <Right>
 
 " foldcolumn
-nnoremap <Leader>fc :call FoldColumnToggle()<CR>
 function! FoldColumnToggle()
   if &foldcolumn
     setlocal foldcolumn=0
@@ -156,7 +156,6 @@ function! FoldColumnToggle()
 endfunction
 
 " quickfix window
-nnoremap <Leader>qf :call QuickfixToggle()<CR>
 let g:quickfix_is_open = 0
 function! QuickfixToggle()
   if g:quickfix_is_open
