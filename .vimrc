@@ -63,21 +63,22 @@ nnoremap H ^
 nnoremap L $
 
 " Leader shortcuts {{{
-nmap <leader>" ysiw"
-nmap <leader>' ysiw'
-vnoremap <leader>" <esc>a"<esc>`<i"<esc>`>ll
-vnoremap <leader>' <esc>a'<esc>`<i'<esc>`>ll
+nmap <Leader>" ysiw"
+nmap <Leader>' ysiw'
+vnoremap <Leader>" <esc>a"<esc>`<i"<esc>`>ll
+vnoremap <Leader>' <esc>a'<esc>`<i'<esc>`>ll
 " start substitution
-nnoremap <leader>s :%s/
+nnoremap <Leader>s :%s/
 " reload this file
 nnoremap <Leader>rl :e %<cr>
 " edit vimrc
-nnoremap <leader>ev :rightbelow vsplit $MYVIMRC<CR>G
+nnoremap <Leader>ev :rightbelow vsplit $MYVIMRC<CR>G
 " source vimrc
-nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>
 " Command+T
-nnoremap <silent> <leader>t :CommandT<CR>
-nnoremap <silent> <leader>b :CommandTBuffer<CR>
+nnoremap <silent> <Leader>t :CommandT<CR>
+nnoremap <silent> <Leader>tb :CommandTBuffer<CR>
+nnoremap <silent> <Leader>tf :CommandTFlush<CR>
 " edit prev buffer
 nnoremap <Leader>eb :execute "rightbelow vsplit " . bufname("#")<cr>
 " append ; at the end of current line
@@ -145,7 +146,7 @@ cnoremap <c-j> <Left>
 cnoremap <c-l> <Right>
 
 " foldcolumn
-nnoremap <leader>fc :call FoldColumnToggle()<CR>
+nnoremap <Leader>fc :call FoldColumnToggle()<CR>
 function! FoldColumnToggle()
   if &foldcolumn
     setlocal foldcolumn=0

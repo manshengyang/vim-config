@@ -12,7 +12,7 @@ function! s:GrepOperator(type)
   else
     return
   endif
-  silent execute "grep! -R ". shellescape(@@) . " ."
+  execute "grep! -R ". shellescape(@@) . " ."
   copen
 
   let @@ = saved_yank
