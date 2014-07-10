@@ -168,3 +168,7 @@ function! QuickfixToggle()
     let g:quickfix_is_open = 1
   endif
 endfunction
+
+" sideways
+nnoremap <c-h> :SidewaysLeft<CR>
+nnoremap <c-l> :SidewaysRight<CR>
