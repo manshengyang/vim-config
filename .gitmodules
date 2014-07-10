@@ -64,3 +64,6 @@
 [submodule "submodules/unimpaired"]
 	path = submodules/unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "submodules/sideways"]
+	path = submodules/sideways
+	url = https://github.com/AndrewRadev/sideways.vim.git
