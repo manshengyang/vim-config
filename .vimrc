@@ -15,7 +15,7 @@ set foldlevel=99
 " make backspace work like most other apps
 set backspace=2
 set ic
-set cc=80
+set cc=100
 filetype plugin indent on
 colo wombat256mod
 
