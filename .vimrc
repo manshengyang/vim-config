@@ -121,8 +121,6 @@ augroup END
 
 " I have no idea who breaks <C-G>, but I want it back
 inoremap <c-g> <c-g>
-" trigger abbreviations and break undo on each <cr>
-inoremap <cr> <c-]><c-g>u<cr>
 inoremap <c-b> <esc>viwUea
 
 " tabs
@@ -172,3 +170,7 @@ endfunction
 " sideways
 nnoremap <c-h> :SidewaysLeft<CR>
 nnoremap <c-l> :SidewaysRight<CR>
+
+" syntastic
+let g:syntastic_cpp_compiler = "clang++"
+let g:syntastic_cpp_compiler_options = " -std=c++11 -stdlib=libc++"
