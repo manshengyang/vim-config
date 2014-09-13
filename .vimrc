@@ -22,6 +22,9 @@ colo wombat256mod
 let mapleader = ","
 let maplocalleader = "\\"
 
+" ruby slowness fix
+au FileType ruby set re=1
+
 syntax on
 augroup trailing_space_syntax
   au!
@@ -116,6 +119,7 @@ augroup filetype_mappings
   au BufEnter,BufNew *.rabl setlocal filetype=ruby
   au BufEnter,BufNew Gemfile setlocal filetype=ruby
   au BufEnter,BufNew *.jbuilder setlocal filetype=ruby
+  au BufEnter,BufNew *.god setlocal filetype=ruby
   au BufEnter,BufNew *.html.slim setlocal filetype=slim
 augroup END
 
@@ -174,3 +178,12 @@ nnoremap <c-l> :SidewaysRight<CR>
 " syntastic
 let g:syntastic_cpp_compiler = "clang++"
 let g:syntastic_cpp_compiler_options = " -std=c++11 -stdlib=libc++"
+
+" ocaml
+autocmd FileType ocaml set commentstring=(*\ %s\ *)
+let s:ocamlmerlin=substitute(system('opam config var share'),'\n$','','''') .  "/merlin"
+execute "set rtp+=".s:ocamlmerlin."/vim"
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_omni_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
