@@ -121,6 +121,8 @@ augroup filetype_mappings
   au BufEnter,BufNew *.jbuilder setlocal filetype=ruby
   au BufEnter,BufNew *.god setlocal filetype=ruby
   au BufEnter,BufNew *.html.slim setlocal filetype=slim
+  au BufEnter,BufNew *.md setlocal filetype=markdown
+  au BufEnter,BufNew *.cuh setlocal filetype=cpp
 augroup END
 
 " I have no idea who breaks <C-G>, but I want it back
