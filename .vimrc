@@ -123,6 +123,7 @@ augroup filetype_mappings
   au BufEnter,BufNew *.html.slim setlocal filetype=slim
   au BufEnter,BufNew *.md setlocal filetype=markdown
   au BufEnter,BufNew *.cuh setlocal filetype=cpp
+  au BufEnter,BufNew *.cu setlocal filetype=cpp
 augroup END
 
 " I have no idea who breaks <C-G>, but I want it back
