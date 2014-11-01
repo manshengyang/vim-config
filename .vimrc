@@ -186,9 +186,3 @@ let g:syntastic_mode_map = { 'mode': 'active',
 
 " ocaml
 autocmd FileType ocaml set commentstring=(*\ %s\ *)
-let s:ocamlmerlin=substitute(system('opam config var share'),'\n$','','''') .  "/merlin"
-execute "set rtp+=".s:ocamlmerlin."/vim"
-if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
-endif
-let g:neocomplcache_force_omni_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
