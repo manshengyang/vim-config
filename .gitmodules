@@ -55,9 +55,6 @@
 	path = submodules/command-t
 	url = https://github.com/wincent/Command-T.git
   ignore = dirty
-[submodule "submodules/vim-swift"]
-	path = submodules/vim-swift
-	url = https://github.com/lightyang/vim-swift.git
 [submodule "submodules/syntastic"]
 	path = submodules/syntastic
 	url = https://github.com/scrooloose/syntastic.git
