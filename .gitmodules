@@ -64,3 +64,6 @@
 [submodule "submodules/sideways"]
 	path = submodules/sideways
 	url = https://github.com/AndrewRadev/sideways.vim.git
+[submodule "submodules/vim-latex"]
+	path = submodules/vim-latex
+	url = https://github.com/lervag/vim-latex.git
