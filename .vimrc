@@ -124,6 +124,7 @@ augroup filetype_mappings
   au BufEnter,BufNew *.md setlocal filetype=markdown
   au BufEnter,BufNew *.cuh setlocal filetype=cpp
   au BufEnter,BufNew *.cu setlocal filetype=cpp
+  au BufEnter,BufNew *.tex setlocal filetype=tex
 augroup END
 
 " I have no idea who breaks <C-G>, but I want it back
@@ -183,6 +184,7 @@ let g:syntastic_cpp_compiler = "clang++"
 let g:syntastic_cpp_compiler_options = " -std=c++11 -stdlib=libc++"
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['java'] }
+let g:syntastics_ruby_checks = ["rubocop"]
 
 " ocaml
 autocmd FileType ocaml set commentstring=(*\ %s\ *)
