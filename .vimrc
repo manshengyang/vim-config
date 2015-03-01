@@ -185,6 +185,7 @@ let g:syntastic_cpp_compiler_options = " -std=c++11 -stdlib=libc++"
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['java'] }
 " let g:syntastic_ruby_checkers = ["rubocop"]
+let g:syntastic_html_tidy_ignore_errors = [ 'is not recognized', 'discarding unexpected', 'proprietary attribute', 'trimming empty' ]
 
 " ocaml
 autocmd FileType ocaml set commentstring=(*\ %s\ *)
