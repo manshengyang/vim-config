@@ -189,3 +189,5 @@ let g:syntastic_html_tidy_ignore_errors = [ 'is not recognized', 'discarding une
 
 " ocaml
 autocmd FileType ocaml set commentstring=(*\ %s\ *)
+
+set wildignore+=*.class,*.o,*.tmp
