@@ -137,6 +137,8 @@ nnoremap <c-p> gT
 
 " copy
 vnoremap <c-v> "*y
+nmap <c-c> :.w !pbcopy<CR><CR>
+vmap <c-c> :w !pbcopy<CR><CR>
 
 " magic search
 nnoremap / /\v
