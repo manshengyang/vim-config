@@ -134,6 +134,8 @@ inoremap <c-b> <esc>viwUea
 " tabs
 nnoremap <c-n> gt
 nnoremap <c-p> gT
+nnoremap <c-j> :tabm +1<CR>
+nnoremap <c-k> :tabm -1<CR>
 
 " copy
 vnoremap <c-v> "*y
