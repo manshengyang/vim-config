@@ -22,6 +22,8 @@ colo wombat256mod
 let mapleader = ","
 let maplocalleader = "\\"
 
+set wildignore+=*.class,*.o,*.tmp
+
 " ruby slowness fix
 au FileType ruby set re=1
 
@@ -191,8 +193,6 @@ let g:syntastic_check_on_wq = 0
 " ocaml
 au FileType ocaml set commentstring=(*\ %s\ *)
 
-set wildignore+=*.class,*.o,*.tmp
-
 " FSwitch
 augroup filetype_mappings
   au!
@@ -211,3 +211,16 @@ function! SetHppSwitch()
   let b:fswitchdst = 'cpp,cc,cxx'
   let b:fswitchlocs = '.,../src'
 endfunction
+
+" ycm
+let g:ycm_complete_in_comments = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 0
+let g:ycm_key_list_select_completion = ['<c-n>']
+let g:ycm_key_list_previous_completion = ['<c-p>']
+
+" ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"

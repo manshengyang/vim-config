@@ -73,3 +73,9 @@
 [submodule "submodules/you-complete-me"]
 	path = submodules/you-complete-me
 	url = git@github.com:Valloric/YouCompleteMe.git
+[submodule "submodules/ultisnips"]
+	path = submodules/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "submodules/vim-snippets"]
+	path = submodules/vim-snippets
+	url = git@github.com:honza/vim-snippets
