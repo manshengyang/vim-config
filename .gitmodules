@@ -67,3 +67,6 @@
 [submodule "submodules/vim-latex"]
 	path = submodules/vim-latex
 	url = https://github.com/lervag/vim-latex.git
+[submodule "submodules/vim-fswitch"]
+	path = submodules/vim-fswitch
+	url = git@github.com:derekwyatt/vim-fswitch.git

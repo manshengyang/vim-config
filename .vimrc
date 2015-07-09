@@ -53,7 +53,8 @@ source ~/.vim/conf/statusline.vim
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-nnoremap <F2> :vertical wincmd f<cr>
+" nnoremap <F2> :vertical wincmd f<cr>
+nnoremap <F2> :FSSplitRight<CR>
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :TlistToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
@@ -187,11 +188,34 @@ nnoremap <c-l> :SidewaysRight<CR>
 let g:syntastic_cpp_compiler = "clang++"
 let g:syntastic_cpp_compiler_options = " -std=c++11 -stdlib=libc++"
 let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'passive_filetypes': ['java'] }
+                           \ 'passive_filetypes': ['java', 'eruby'] }
 " let g:syntastic_ruby_checkers = ["rubocop"]
 let g:syntastic_html_tidy_ignore_errors = [ 'is not recognized', 'discarding unexpected', 'proprietary attribute', 'trimming empty' ]
+let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " ocaml
-autocmd FileType ocaml set commentstring=(*\ %s\ *)
+au FileType ocaml set commentstring=(*\ %s\ *)
 
 set wildignore+=*.class,*.o,*.tmp
+
+" FSwitch
+augroup filetype_mappings
+  au!
+  au BufEnter,BufNew *.cpp call SetCppSwitch()
+  au BufEnter,BufNew *.cc call SetCppSwitch()
+  au BufEnter,BufNew *.cxx call SetCppSwitch()
+  au BufEnter,BufNew *.h call SetHppSwitch()
+  au BufEnter,BufNew *.hh call SetHppSwitch()
+  au BufEnter,BufNew *.hpp call SetHppSwitch()
+augroup END
+function SetCppSwitch()
+  let b:fswitchdst = 'hpp,h,hh'
+  let b:fswitchlocs = '.,../inc'
+endfunction
+function SetHppSwitch()
+  let b:fswitchdst = 'cpp,cc,cxx'
+  let b:fswitchlocs = '.,../src'
+endfunction
