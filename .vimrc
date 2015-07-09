@@ -46,12 +46,16 @@ call pathogen#infect('~/.vim/submodules/')
 call pathogen#helptags()
 
 source ~/.vim/conf/neocomplcache.vim
+augroup completewin
+  au!
+  " If you prefer the Omni-Completion tip window to close when a selection is
+  " made, these lines close it on movement in insert mode or when leaving
+  " insert mode
+  au CursorMovedI * if pumvisible() == 0|pclose|endif
+  au InsertLeave * if pumvisible() == 0|pclose|endif
+augroup END
+
 source ~/.vim/conf/statusline.vim
-" If you prefer the Omni-Completion tip window to close when a selection is
-" made, these lines close it on movement in insert mode or when leaving
-" insert mode
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " nnoremap <F2> :vertical wincmd f<cr>
 nnoremap <F2> :FSSplitRight<CR>
@@ -104,8 +108,8 @@ nnoremap <Leader>fq :call QuickfixToggle()<CR>
 
 " Vimscript file settings {{{
 augroup filetype_vim
-  autocmd!
-  autocmd FileType vim setlocal foldmethod=marker
+  au!
+  au FileType vim setlocal foldmethod=marker
 augroup END
 " }}}
 
@@ -185,8 +189,6 @@ nnoremap <c-h> :SidewaysLeft<CR>
 nnoremap <c-l> :SidewaysRight<CR>
 
 " syntastic
-let g:syntastic_cpp_compiler = "clang++"
-let g:syntastic_cpp_compiler_options = " -std=c++11 -stdlib=libc++"
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['java', 'eruby'] }
 " let g:syntastic_ruby_checkers = ["rubocop"]
@@ -211,11 +213,11 @@ augroup filetype_mappings
   au BufEnter,BufNew *.hh call SetHppSwitch()
   au BufEnter,BufNew *.hpp call SetHppSwitch()
 augroup END
-function SetCppSwitch()
+function! SetCppSwitch()
   let b:fswitchdst = 'hpp,h,hh'
   let b:fswitchlocs = '.,../inc'
 endfunction
-function SetHppSwitch()
+function! SetHppSwitch()
   let b:fswitchdst = 'cpp,cc,cxx'
   let b:fswitchlocs = '.,../src'
 endfunction
