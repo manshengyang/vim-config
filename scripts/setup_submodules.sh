@@ -1,5 +1,4 @@
-git submodule init
-git submodule update
+git submodule update --init --recursive
 git submodule foreach git pull origin master
 
 # compile command+t
