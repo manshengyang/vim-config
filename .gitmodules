@@ -79,3 +79,6 @@
 [submodule "submodules/vim-snippets"]
 	path = submodules/vim-snippets
 	url = git@github.com:honza/vim-snippets
+[submodule "submodules/vim-scala"]
+	path = submodules/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
