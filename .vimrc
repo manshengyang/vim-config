@@ -115,10 +115,7 @@ onoremap n@ :<c-u>execute "normal! /\\S\\+@\\S\\+\\.\\w\\+\r:nohlsearch\rv5e"<cr
 
 augroup filetype_mappings
   au!
-  au BufEnter,BufNew *.rabl setlocal filetype=ruby
-  au BufEnter,BufNew Gemfile setlocal filetype=ruby
-  au BufEnter,BufNew *.jbuilder setlocal filetype=ruby
-  au BufEnter,BufNew *.god setlocal filetype=ruby
+  au BufEnter,BufNew *.rabl,Gemfile,*.jbuilder,*.god setlocal filetype=ruby
   au BufEnter,BufNew *.html.slim setlocal filetype=slim
   au BufEnter,BufNew *.md setlocal filetype=markdown
   au BufEnter,BufNew *.cuh setlocal filetype=cpp
@@ -198,12 +195,8 @@ au FileType ocaml set commentstring=(*\ %s\ *)
 " FSwitch
 augroup filetype_mappings
   au!
-  au BufEnter,BufNew *.cpp call SetCppSwitch()
-  au BufEnter,BufNew *.cc call SetCppSwitch()
-  au BufEnter,BufNew *.cxx call SetCppSwitch()
-  au BufEnter,BufNew *.h call SetHppSwitch()
-  au BufEnter,BufNew *.hh call SetHppSwitch()
-  au BufEnter,BufNew *.hpp call SetHppSwitch()
+  au BufEnter,BufNew *.cpp,*cc,*cxx call SetCppSwitch()
+  au BufEnter,BufNew *.h,*hh,*hpp call SetHppSwitch()
 augroup END
 function! SetCppSwitch()
   let b:fswitchdst = 'hpp,h,hh'
