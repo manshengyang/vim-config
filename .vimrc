@@ -40,9 +40,6 @@ set hlsearch
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-let mapleader = ','
-let maplocalleader = '\\'
-
 let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 call pathogen#infect('~/.vim/submodules/')
 call pathogen#helptags()
@@ -105,10 +102,15 @@ augroup filetype_vim
 augroup END
 " }}}
 
+" in next ()
 onoremap in( :<c-u>normal! f(vi(<cr>
+" in prev ()
 onoremap il( :<c-u>normal! F)vi<cr>
+" around next ()
 onoremap an( :<c-u>normal! f(va(<cr>
+" around prev ()
 onoremap al( :<c-u>normal! F)va(<cr>
+" next abc@abc
 onoremap n@ :<c-u>execute "normal! /\\S\\+@\\S\\+\\.\\w\\+\r:nohlsearch\rv5e"<cr>
 
 augroup filetype_mappings
@@ -224,3 +226,6 @@ let g:ycm_key_list_previous_completion = ['<c-p>']
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+source ~/dtl.vimrc
+let g:NERDTreeDirArrows=0
