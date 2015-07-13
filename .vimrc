@@ -218,5 +218,8 @@ let g:ycm_filepath_completion_use_working_dir = 0
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+source ~/dtl.vimrc
+let g:NERDTreeDirArrows=0
