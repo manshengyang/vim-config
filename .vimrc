@@ -220,3 +220,6 @@ let g:ycm_filepath_completion_use_working_dir = 0
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" easymotion
+map <LocalLeader> <Plug>(easymotion-prefix)
