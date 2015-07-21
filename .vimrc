@@ -1,5 +1,4 @@
 set nocompatible
-source ~/.vim/conf/google.vim
 
 " basic config
 set encoding=utf-8
@@ -18,6 +17,8 @@ set ic
 set cc=100
 filetype plugin indent on
 colo wombat256mod
+
+runtime macros/matchit.vim
 
 let mapleader = ","
 let maplocalleader = "\\"
@@ -181,7 +182,7 @@ nnoremap <c-l> :SidewaysRight<CR>
 
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'passive_filetypes': ['java', 'eruby'] }
+                           \ 'passive_filetypes': ['cpp', 'java', 'eruby'] }
 " let g:syntastic_ruby_checkers = ["rubocop"]
 let g:syntastic_html_tidy_ignore_errors = [ 'is not recognized', 'discarding unexpected', 'proprietary attribute', 'trimming empty' ]
 let g:syntastic_always_populate_loc_list = 1
@@ -215,7 +216,7 @@ let g:ycm_seed_identifiers_with_syntax = 0
 let g:ycm_key_list_select_completion = ['<c-n>']
 let g:ycm_key_list_previous_completion = ['<c-p>']
 let g:ycm_filepath_completion_use_working_dir = 0
-let g:ycm_show_diagnostics_ui = 1
+let g:ycm_show_diagnostics_ui = 0
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
