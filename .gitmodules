@@ -69,16 +69,16 @@
 	url = https://github.com/lervag/vim-latex.git
 [submodule "submodules/vim-fswitch"]
 	path = submodules/vim-fswitch
-	url = git@github.com:derekwyatt/vim-fswitch.git
+	url = https://github.com/derekwyatt/vim-fswitch.git
 [submodule "submodules/you-complete-me"]
 	path = submodules/you-complete-me
-	url = git@github.com:Valloric/YouCompleteMe.git
+	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "submodules/ultisnips"]
 	path = submodules/ultisnips
-	url = git@github.com:SirVer/ultisnips.git
+	url = https://github.com/SirVer/ultisnips.git
 [submodule "submodules/vim-snippets"]
 	path = submodules/vim-snippets
-	url = git@github.com:honza/vim-snippets
+	url = https://github.com/honza/vim-snippets
 [submodule "submodules/vim-scala"]
 	path = submodules/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
