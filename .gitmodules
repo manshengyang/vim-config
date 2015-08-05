@@ -85,3 +85,6 @@
 [submodule "submodules/vim-easymotion"]
 	path = submodules/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
+[submodule "submodules/thrift.vim"]
+	path = submodules/thrift.vim
+	url = https://github.com/solarnz/thrift.vim.git
