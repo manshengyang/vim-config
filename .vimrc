@@ -15,6 +15,7 @@ set foldlevel=99
 set backspace=2
 set ic
 set cc=100
+set ttimeoutlen=100
 filetype plugin indent on
 colo wombat256mod
 
