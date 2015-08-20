@@ -18,6 +18,7 @@ set cc=100
 " file path autocompelte
 set wildmode=longest,list,full
 set wildmenu
+set ttimeoutlen=100
 filetype plugin indent on
 colo wombat256mod
 
