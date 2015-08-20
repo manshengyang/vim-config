@@ -15,6 +15,9 @@ set foldlevel=99
 set backspace=2
 set ic
 set cc=100
+" file path autocompelte
+set wildmode=longest,list,full
+set wildmenu
 filetype plugin indent on
 colo wombat256mod
 
