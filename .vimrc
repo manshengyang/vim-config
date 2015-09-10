@@ -20,8 +20,6 @@ set wildmode=longest,list,full
 set wildmenu
 set ttimeoutlen=100
 filetype plugin indent on
-set background=dark
-colo solarized
 
 runtime macros/matchit.vim
 
@@ -49,6 +47,9 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 call pathogen#infect('~/.vim/submodules/')
 call pathogen#helptags()
+
+set background=dark
+colo solarized
 
 source ~/.vim/conf/statusline.vim
 
