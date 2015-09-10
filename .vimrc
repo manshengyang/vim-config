@@ -200,7 +200,7 @@ let g:syntastic_check_on_wq = 0
 au FileType ocaml set commentstring=(*\ %s\ *)
 
 " FSwitch
-augroup filetype_mappings
+augroup fswitch
   au!
   au BufEnter,BufNew *.cpp,*cc,*cxx call SetCppSwitch()
   au BufEnter,BufNew *.h,*hh,*hpp call SetHppSwitch()

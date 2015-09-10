@@ -73,6 +73,7 @@
 [submodule "submodules/you-complete-me"]
 	path = submodules/you-complete-me
 	url = https://github.com/Valloric/YouCompleteMe.git
+  ignore = dirty
 [submodule "submodules/ultisnips"]
 	path = submodules/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
