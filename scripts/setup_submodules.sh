@@ -6,5 +6,5 @@ TOP=$(git rev-parse --show-toplevel)
 cd $TOP
 cd ./submodules/command-t/ruby/command-t && ruby extconf.rb && make
 cd $TOP
-cd ./submodules/you-complete-me && ./install.sh
+cd ./submodules/you-complete-me && ./install.py
 cd $TOP
