@@ -88,3 +88,6 @@
 [submodule "submodules/thrift.vim"]
 	path = submodules/thrift.vim
 	url = https://github.com/solarnz/thrift.vim.git
+[submodule "submodules/vim-colors-solarized"]
+	path = submodules/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git

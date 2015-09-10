@@ -20,7 +20,8 @@ set wildmode=longest,list,full
 set wildmenu
 set ttimeoutlen=100
 filetype plugin indent on
-colo wombat256mod
+set background=dark
+colo solarized
 
 runtime macros/matchit.vim
 
