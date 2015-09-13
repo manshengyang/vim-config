@@ -92,3 +92,9 @@
 [submodule "submodules/vim-colors-solarized"]
 	path = submodules/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "submodules/unite.vim"]
+	path = submodules/unite.vim
+	url = https://github.com/lightyang/unite.vim.git
+[submodule "submodules/vimproc.vim"]
+	path = submodules/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim.git
