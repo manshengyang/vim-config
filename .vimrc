@@ -89,14 +89,6 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 " }}}
 
-" Vimscript file settings {{{
-augroup filetype_vim
-  au!
-  au FileType vim setlocal foldmethod=marker
-  au FileType vim setlocal formatoptions-=t
-augroup END
-" }}}
-
 " in next ()
 onoremap in( :<c-u>normal! f(vi(<cr>
 " in prev ()
@@ -203,6 +195,7 @@ augroup fswitch
   au BufEnter,BufNew *.cpp,*cc,*cxx call SetCppSwitch()
   au BufEnter,BufNew *.h,*hh,*hpp call SetHppSwitch()
 augroup END
+" FSwitch
 function! SetCppSwitch()
   let b:fswitchdst = 'hpp,h,hh'
   let b:fswitchlocs = '.,../inc'
@@ -290,3 +283,16 @@ nnoremap <space>y :Unite -no-restore -start-insert history/yank register<CR>
 nnoremap <space>f :Unite -no-restore -start-insert -no-empty grep:%<CR>
 nnoremap <space>g :Unite -no-restore -no-empty grep:.<CR>
 nnoremap <space>a :Unite tab window<CR>
+
+"===============================================================================
+" Scala
+"===============================================================================
+function! SortScalaImportOnWrite()
+  au BufWritePre * :SortScalaImports
+endfunction
+
+augroup filetype_actions
+  au!
+  au FileType vim setlocal foldmethod=marker
+  au FileType scala call SortScalaImportOnWrite()
+augroup END
