@@ -294,5 +294,5 @@ endfunction
 augroup filetype_actions
   au!
   au FileType vim setlocal foldmethod=marker
-  au FileType scala call SortScalaImportOnWrite()
+  " au FileType scala call SortScalaImportOnWrite()
 augroup END
