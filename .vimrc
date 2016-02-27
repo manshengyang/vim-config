@@ -30,6 +30,7 @@ set wildignore+=*.class,*.o,*.tmp
 
 " ruby slowness fix
 au FileType ruby set re=1
+au FileType python set shiftwidth=2 tabstop=2
 
 syntax on
 augroup trailing_space_syntax
@@ -174,7 +175,7 @@ nnoremap <c-l> :SidewaysRight<CR>
 " syntastic
 "===============================================================================
 let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'passive_filetypes': ['cpp', 'java', 'eruby'] }
+                           \ 'passive_filetypes': ['cpp', 'java', 'eruby', 'slim', 'scala'] }
 " let g:syntastic_ruby_checkers = ["rubocop"]
 let g:syntastic_html_tidy_ignore_errors = [ 'is not recognized', 'discarding unexpected', 'proprietary attribute', 'trimming empty' ]
 let g:syntastic_always_populate_loc_list = 1
@@ -296,3 +297,5 @@ augroup filetype_actions
   au FileType vim setlocal foldmethod=marker
   " au FileType scala call SortScalaImportOnWrite()
 augroup END
+
+autocmd CompleteDone * pclose
