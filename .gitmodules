@@ -98,3 +98,6 @@
 [submodule "submodules/vimproc.vim"]
 	path = submodules/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "submodules/typescript-vim"]
+	path = submodules/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
