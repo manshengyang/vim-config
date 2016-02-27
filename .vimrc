@@ -59,6 +59,7 @@ nnoremap <F2> :FSSplitRight<CR>
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :TlistToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
+nnoremap <F12> :SyntasticCheck<CR>
 
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
@@ -175,7 +176,7 @@ nnoremap <c-l> :SidewaysRight<CR>
 " syntastic
 "===============================================================================
 let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'passive_filetypes': ['cpp', 'java', 'eruby', 'slim', 'scala'] }
+                           \ 'passive_filetypes': ['cpp', 'java', 'eruby', 'slim', 'scala', 'typescript'] }
 " let g:syntastic_ruby_checkers = ["rubocop"]
 let g:syntastic_html_tidy_ignore_errors = [ 'is not recognized', 'discarding unexpected', 'proprietary attribute', 'trimming empty' ]
 let g:syntastic_always_populate_loc_list = 1
