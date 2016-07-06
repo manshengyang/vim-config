@@ -35,10 +35,8 @@ au FileType python set shiftwidth=2 tabstop=2
 syntax on
 augroup trailing_space_syntax
   au!
-  au Syntax * syn match ExtraWhitespace /\s\+$/
+  au Syntax * syn match ExtraWhitespace /\s\+$/ containedin=ALL
 augroup END
-
-highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 
 set incsearch
 set hlsearch
@@ -51,6 +49,8 @@ call pathogen#helptags()
 
 set background=dark
 colo solarized
+
+highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 
 source ~/.vim/conf/statusline.vim
 
@@ -175,14 +175,18 @@ nnoremap <c-l> :SidewaysRight<CR>
 "===============================================================================
 " syntastic
 "===============================================================================
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'passive_filetypes': ['cpp', 'java', 'eruby', 'slim', 'scala', 'typescript'] }
+let g:syntastic_mode_map = {
+      \'mode': 'active',
+      \ 'passive_filetypes': ['cpp', 'java', 'eruby', 'slim', 'scala', 'typescript', 'html'] }
 " let g:syntastic_ruby_checkers = ["rubocop"]
-let g:syntastic_html_tidy_ignore_errors = [ 'is not recognized', 'discarding unexpected', 'proprietary attribute', 'trimming empty' ]
+let g:syntastic_html_tidy_ignore_errors = [
+      \ 'is not recognized', 'discarding unexpected', 'proprietary attribute', 'trimming empty',
+      \ 'is invalid']
 let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_typescript_tsc_args = "--experimentalDecorators"
 
 "===============================================================================
 " ocaml

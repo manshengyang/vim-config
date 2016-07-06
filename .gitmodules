@@ -101,3 +101,6 @@
 [submodule "submodules/typescript-vim"]
 	path = submodules/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "submodules/haskell-vim"]
+	path = submodules/haskell-vim
+	url = https://github.com/neovimhaskell/haskell-vim.git
