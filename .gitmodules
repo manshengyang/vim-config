@@ -107,3 +107,6 @@
 [submodule "submodules/rust"]
 	path = submodules/rust
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule "submodules/vim-toml"]
+	path = submodules/vim-toml
+	url = https://github.com/cespare/vim-toml.git
