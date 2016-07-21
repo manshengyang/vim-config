@@ -104,3 +104,6 @@
 [submodule "submodules/haskell-vim"]
 	path = submodules/haskell-vim
 	url = https://github.com/neovimhaskell/haskell-vim.git
+[submodule "submodules/rust"]
+	path = submodules/rust
+	url = https://github.com/rust-lang/rust.vim.git
