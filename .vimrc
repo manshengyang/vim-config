@@ -107,8 +107,8 @@ augroup filetype_mappings
   au BufEnter,BufNew *.rabl,Gemfile,*.jbuilder,*.god setlocal filetype=ruby
   au BufEnter,BufNew *.html.slim setlocal filetype=slim
   au BufEnter,BufNew *.md setlocal filetype=markdown
-  au BufEnter,BufNew *.cuh setlocal filetype=cpp
-  au BufEnter,BufNew *.cu setlocal filetype=cpp
+  au BufEnter,BufNew *.cuh setlocal filetype=cuda
+  au BufEnter,BufNew *.cu setlocal filetype=cuda
   au BufEnter,BufNew *.tex setlocal filetype=tex
 augroup END
 
