@@ -30,7 +30,7 @@ set wildignore+=*.class,*.o,*.tmp
 
 " ruby slowness fix
 au FileType ruby set re=1
-au FileType python set shiftwidth=2 tabstop=2
+au FileType python set shiftwidth=4 tabstop=4
 
 syntax on
 augroup trailing_space_syntax
