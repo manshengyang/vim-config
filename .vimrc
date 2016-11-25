@@ -59,6 +59,8 @@ nnoremap <F2> :FSSplitRight<CR>
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :TlistToggle<CR>
 nnoremap <F5> :GundoToggle<CR>
+" remove trailing space
+nnoremap <F11> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 nnoremap <F12> :SyntasticCheck<CR>
 
 let g:session_autosave = 'yes'
@@ -81,8 +83,6 @@ nnoremap <Leader>ev :rightbelow vsplit $MYVIMRC<CR>G
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 " append ; at the end of current line
 nnoremap <Leader>a; mqA;<Esc>`q
-" remove trailing space
-nnoremap <Leader>d<Space> mq^$bldw`q
 " new tab
 nnoremap <Leader>T :tabnew<CR>
 " write
