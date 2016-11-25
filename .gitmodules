@@ -110,3 +110,6 @@
 [submodule "submodules/vim-toml"]
 	path = submodules/vim-toml
 	url = https://github.com/cespare/vim-toml.git
+[submodule "submodules/vim-python-pep8-indent"]
+	path = submodules/vim-python-pep8-indent
+	url = https://github.com/hynek/vim-python-pep8-indent.git
