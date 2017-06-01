@@ -203,7 +203,7 @@ augroup fswitch
 augroup END
 " FSwitch
 function! SetCppSwitch()
-  let b:fswitchdst = 'hpp,h,hh'
+  let b:fswitchdst = 'h,hpp,hh'
   let b:fswitchlocs = '.,../inc'
 endfunction
 function! SetHppSwitch()
@@ -293,9 +293,9 @@ nnoremap <space>a :Unite tab window<CR>
 "===============================================================================
 " Scala
 "===============================================================================
-function! SortScalaImportOnWrite()
-  au BufWritePre * :SortScalaImports
-endfunction
+" function! SortScalaImportOnWrite()
+"   au BufWritePre * :SortScalaImports
+" endfunction
 
 augroup filetype_actions
   au!
