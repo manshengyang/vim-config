@@ -289,6 +289,7 @@ nnoremap <space>y :Unite -no-restore -start-insert history/yank register<CR>
 nnoremap <space>f :Unite -no-restore -start-insert -no-empty grep:%<CR>
 nnoremap <space>g :Unite -no-restore -no-empty grep:.<CR>
 nnoremap <space>a :Unite tab window<CR>
+nnoremap <space>b :Unite -no-restore -start-insert buffer<CR>
 
 "===============================================================================
 " Scala
