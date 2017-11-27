@@ -30,9 +30,21 @@ set wildignore+=*.class,*.o,*.tmp
 
 " ruby slowness fix
 au FileType ruby set re=1
+
+" some filetype settings
 au FileType python setlocal shiftwidth=4 tabstop=4
+au FileType proto setlocal tabstop=2 shiftwidth=2
+au BufEnter,BufNew prelude_bazel set filetype=bzl
+au FileType bzl setlocal tabstop=4 shiftwidth=4
+au FileType java setlocal tabstop=2 shiftwidth=2
+au FileType sh setlocal tabstop=2 shiftwidth=2
+
+" better indent for C++ lamdas
+au FileType cpp setlocal cindent cinoptions=j1,h1,l1,g1,t0,i4,+4,(0,w1,W4
 
 syntax on
+
+" trailing spaces
 augroup trailing_space_syntax
   au!
   au Syntax * syn match ExtraWhitespace /\s\+$/ containedin=ALL
