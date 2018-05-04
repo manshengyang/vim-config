@@ -29,12 +29,12 @@ let maplocalleader = "\\"
 set wildignore+=*.class,*.o,*.tmp
 
 " ruby slowness fix
-au FileType ruby set re=1
+au FileType ruby setlocal re=1
 
 " some filetype settings
 au FileType python setlocal shiftwidth=4 tabstop=4
 au FileType proto setlocal tabstop=2 shiftwidth=2
-au BufEnter,BufNew prelude_bazel set filetype=bzl
+au BufEnter,BufNew prelude_bazel setlocal filetype=bzl
 au FileType bzl setlocal tabstop=4 shiftwidth=4
 au FileType java setlocal tabstop=2 shiftwidth=2
 au FileType sh setlocal tabstop=2 shiftwidth=2
@@ -203,7 +203,7 @@ let g:syntastic_typescript_tsc_args = "--experimentalDecorators"
 "===============================================================================
 " ocaml
 "===============================================================================
-au FileType ocaml set commentstring=(*\ %s\ *)
+au FileType ocaml setlocal commentstring=(*\ %s\ *)
 
 "===============================================================================
 " FSwitch
