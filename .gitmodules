@@ -113,3 +113,6 @@
 [submodule "submodules/vim-python-pep8-indent"]
 	path = submodules/vim-python-pep8-indent
 	url = https://github.com/hynek/vim-python-pep8-indent.git
+[submodule "submodules/vim-ft-bzl"]
+	path = submodules/vim-ft-bzl
+	url = https://github.com/bazelbuild/vim-ft-bzl.git
