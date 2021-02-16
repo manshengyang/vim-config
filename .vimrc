@@ -71,7 +71,7 @@ source ~/.vim/conf/statusline.vim
 nnoremap <F2> :FSSplitRight<CR>
 nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :TlistToggle<CR>
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <F7> :MundoToggle<CR>
 " remove trailing space
 nnoremap <F11> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 nnoremap <F12> :SyntasticCheck<CR>
