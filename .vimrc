@@ -235,6 +235,7 @@ let g:ycm_key_list_select_completion = ['<c-n>']
 let g:ycm_key_list_previous_completion = ['<c-p>']
 let g:ycm_filepath_completion_use_working_dir = 0
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_clangd_args=['--header-insertion=never']
 
 "===============================================================================
 " ultisnips
