@@ -113,3 +113,6 @@
 [submodule "submodules/vim-mundo"]
 	path = submodules/vim-mundo
 	url = https://github.com/simnalamburt/vim-mundo.git
+[submodule "submodules/vim-abolish"]
+	path = submodules/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
