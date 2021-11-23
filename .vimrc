@@ -191,9 +191,7 @@ nnoremap <c-l> :SidewaysRight<CR>
 "===============================================================================
 " syntastic
 "===============================================================================
-let g:syntastic_mode_map = {
-      \'mode': 'active',
-      \ 'passive_filetypes': ['cpp', 'java', 'eruby', 'slim', 'scala', 'typescript', 'html'] }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [] }
 " let g:syntastic_ruby_checkers = ["rubocop"]
 let g:syntastic_html_tidy_ignore_errors = [
       \ 'is not recognized', 'discarding unexpected', 'proprietary attribute', 'trimming empty',
