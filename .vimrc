@@ -66,7 +66,7 @@ set background=dark
 colo solarized
 
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
-highlight SpellBad cterm=underline guid=undercurl
+highlight SpellBad cterm=underline gui=undercurl
 
 source ~/.vim/conf/statusline.vim
 
