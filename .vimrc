@@ -19,7 +19,6 @@ set cc=100
 set wildmode=longest,list,full
 set wildmenu
 set ttimeoutlen=100
-set spell
 filetype plugin indent on
 
 runtime macros/matchit.vim
