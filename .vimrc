@@ -19,6 +19,7 @@ set cc=100
 set wildmode=longest,list,full
 set wildmenu
 set ttimeoutlen=100
+set spell
 filetype plugin indent on
 
 runtime macros/matchit.vim
@@ -41,6 +42,7 @@ au FileType sh setlocal tabstop=2 shiftwidth=2
 au FileType cpp setlocal cindent cinoptions=j1,h1,l1,g1,t0,i4,+4,(0,w1,W4
 
 autocmd BufRead,BufNewFile *.bzl,BUILD,*.BUILD,BUILD.*,WORKSPACE setfiletype bzl
+au FileType bzl setlocal shiftwidth=4 tabstop=4
 let g:no_google_python_indent = 1
 
 syntax on
@@ -64,6 +66,7 @@ set background=dark
 colo solarized
 
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
+highlight SpellBad cterm=underline guid=undercurl
 
 source ~/.vim/conf/statusline.vim
 
