@@ -104,6 +104,9 @@ nnoremap <Leader>T :tabnew<CR>
 nnoremap <Leader>w :w<CR>
 " quit
 nnoremap <Leader>q :q<CR>
+
+nnoremap <Leader>d :YcmCompleter GoToDefinition<CR>
+nnoremap <Leader>i :YcmCompleter GoToImplementation<CR>
 " }}}
 
 " in next ()
@@ -249,7 +252,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "===============================================================================
 " easymotion
 "===============================================================================
-map <LocalLeader> <Plug>(easymotion-prefix)
+map <Leader><Leader> <Plug>(easymotion-prefix)
 
 "===============================================================================
 " Command+T
