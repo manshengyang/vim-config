@@ -287,9 +287,7 @@ if executable('ag')
         \ '--follow', '--nocolor', '--nogroup', '--hidden', '--ignore', '.git', '-m', '1000',
         \ '-g', '']
   let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts =
-        \ '--line-numbers --nocolor --nogroup -i --vimgrep --hidden --ignore ' .
-        \ '''.hg'' --ignore ''.svn'' --ignore ''.git'' --ignore ''.bzr'''
+  let g:unite_source_grep_default_opts = '--line-numbers --nocolor --nogroup --column -i --hidden'
 elseif executable('ack')
   let g:unite_source_grep_command = 'ack'
   let g:unite_source_grep_default_opts = '-i --nogroup --no-heading --no-color -k -H'
