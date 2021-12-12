@@ -116,3 +116,6 @@
 [submodule "submodules/vim-abolish"]
 	path = submodules/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
+[submodule "submodules/vim-bracketed-paste"]
+	path = submodules/vim-bracketed-paste
+	url = https://github.com/ConradIrwin/vim-bracketed-paste.git
