@@ -255,12 +255,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 map <Leader><Leader> <Plug>(easymotion-prefix)
 
 "===============================================================================
-" Command+T
-"===============================================================================
-nnoremap <silent> <Leader>t :CommandT<CR>
-" nnoremap <silent> <Leader>bt :CommandTBuffer<CR>
-
-"===============================================================================
 " Unite
 "===============================================================================
 let g:unite_update_time = 500
