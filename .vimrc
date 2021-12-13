@@ -24,7 +24,6 @@ filetype plugin indent on
 runtime macros/matchit.vim
 
 let mapleader = ","
-let maplocalleader = "\\"
 
 set wildignore+=*.class,*.o,*.tmp
 
@@ -252,7 +251,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "===============================================================================
 " easymotion
 "===============================================================================
-map <Leader><Leader> <Plug>(easymotion-prefix)
+map ; <Plug>(easymotion-prefix)
 
 "===============================================================================
 " Unite
