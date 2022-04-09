@@ -112,3 +112,6 @@
 [submodule "submodules/vim-abolish"]
 	path = submodules/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
+[submodule "submodules/vim-solidity"]
+	path = submodules/vim-solidity
+	url = https://github.com/tomlion/vim-solidity.git
