@@ -115,3 +115,6 @@
 [submodule "submodules/vim-solidity"]
 	path = submodules/vim-solidity
 	url = https://github.com/tomlion/vim-solidity.git
+[submodule "submodules/protobuf.vim"]
+	path = submodules/protobuf.vim
+	url = https://github.com/wfxr/protobuf.vim.git
