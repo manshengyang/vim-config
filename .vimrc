@@ -22,6 +22,7 @@ set ttimeoutlen=100
 set showmode
 set fileencodings=utf-8,gbk
 set guicursor=i:block
+set signcolumn=yes
 filetype plugin indent on
 
 runtime macros/matchit.vim
