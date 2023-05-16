@@ -47,7 +47,6 @@ endfunction
 
 set laststatus=2
 set noshowmode
-set term=xterm-256color
 set statusline=%2*%{Mode()}%3*%1*
 set statusline+=%#StatusLine#
 set statusline+=%{strlen(fugitive#statusline())>0?'\ ':''}
@@ -56,7 +55,6 @@ set statusline+=%{strlen(fugitive#statusline())>0?'\ ':'\ '}
 set statusline+=%f\ %{&ro?'':''}%{&mod?'+':''}%<
 set statusline+=%4*
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%=
 set statusline+=%4*
 set statusline+=%#StatusLine#
