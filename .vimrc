@@ -19,6 +19,9 @@ set cc=100
 set wildmode=longest,list,full
 set wildmenu
 set ttimeoutlen=100
+set showmode
+set fileencodings=utf-8,gbk
+set guicursor=i:block
 filetype plugin indent on
 
 runtime macros/matchit.vim
@@ -86,8 +89,6 @@ colo solarized
 
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 highlight SpellBad cterm=underline gui=undercurl
-
-source ~/.nvim/conf/statusline.vim
 
 " nnoremap <F2> :vertical wincmd f<cr>
 nnoremap <F2> :FSSplitRight<CR>
