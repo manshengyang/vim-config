@@ -7,12 +7,14 @@ if [[ $(uname) == "Darwin" ]]; then
   fi
 else
   if ! $(which nvim); then
-    echo "installing neovim"
     cd ~/.vim
-    wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
-    tar xf nvim-linux64.tar.gz
-    mv nvim-linux64 nvim
-    rm nvim-linux64.tar.gz
+    if [[ ! -e nvim ]]; then
+      echo "installing neovim"
+      wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+      tar xf nvim-linux64.tar.gz
+      mv nvim-linux64 nvim
+      rm nvim-linux64.tar.gz
+    fi
     mkdir -p ~/bin
     ln -sf $(pwd)/nvim/bin/nvim ~/bin/nvim
     ln -sf $(pwd)/nvim/bin/nvim ~/bin/vim
@@ -30,5 +32,6 @@ if [[ ! -e ~/.config/nvim/init.vim ]]; then
   echo "created ~/.config/nvim/init.vim"
 fi
 
+PATH=~/bin:$PATH
 nvim --headless +PlugInstall +qall
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
