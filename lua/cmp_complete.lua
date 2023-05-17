@@ -35,7 +35,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "copilot" },
     { name = 'nvim_lsp' },
-    { name = 'fuzzy_path' },
+    -- { name = 'fuzzy_path' },
     { name = 'fuzzy_buffer' },
     { name = 'path' },
     { name = 'buffer' },
