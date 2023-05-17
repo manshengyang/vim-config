@@ -73,10 +73,21 @@ cmp.setup.cmdline(':', {
 
 -- Set up lspconfig.
 local lsp = require "lspconfig"
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 lsp.pyright.setup({
   capabilities = capabilities,
 })
 lsp.clangd.setup({
   capabilities = capabilities,
 })
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    signs = {
+      severity_limit = "Hint",
+    },
+    virtual_text = {
+      severity_limit = "Warning",
+    },
+  }
+)
