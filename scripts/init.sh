@@ -32,6 +32,10 @@ if [[ ! -e ~/.config/nvim/init.vim ]]; then
   echo "created ~/.config/nvim/init.vim"
 fi
 
+if [[ ! -e ~/.vimrc ]]; then
+  echo "source ~/.vim/vimrc" > ~/.vimrc
+fi
+
 PATH=~/bin:$PATH
 nvim --headless +PlugInstall +qall
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
