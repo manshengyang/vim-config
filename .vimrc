@@ -104,8 +104,11 @@ Plug 'tzachar/fuzzy.nvim'
 Plug 'tzachar/cmp-fuzzy-buffer'
 call plug#end()
 
-set background=dark
 colo solarized
+set t_ut=""
+set t_Co=256
+let g:solarized_termcolors=256
+set background=dark
 
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 highlight SpellBad cterm=underline gui=undercurl
