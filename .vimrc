@@ -1,3 +1,6 @@
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+
 set nocompatible
 
 " basic config
@@ -81,19 +84,24 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'folke/which-key.nvim'
 Plug 'github/copilot.vim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
 " Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 " Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 " Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 Plug 'neovim/nvim-lspconfig'
+Plug 'onsails/lspkind.nvim'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'tzachar/fuzzy.nvim'
 Plug 'tzachar/cmp-fuzzy-buffer'
-Plug 'tzachar/cmp-fuzzy-path'
 call plug#end()
 
 set background=dark
@@ -258,8 +266,8 @@ nnoremap <space>b :Buffers<CR>
 
 " autocmd CompleteDone * pclose
 
-
 lua require('lsp')
 " lua require('coq_complete')
 lua require('cmp_complete')
 lua require('packer_plugins')
+lua require('lualine').setup({options = { theme = 'powerline' }})

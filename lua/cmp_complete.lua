@@ -1,5 +1,6 @@
 -- Set up nvim-cmp.
-local cmp = require'cmp'
+local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 local has_words_before = function()
   if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
@@ -35,11 +36,21 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "copilot" },
     { name = 'nvim_lsp' },
-    -- { name = 'fuzzy_path' },
     { name = 'fuzzy_buffer' },
     { name = 'path' },
     { name = 'buffer' },
-  })
+  }),
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = "symbol_text",
+      menu = ({
+        copilot = "[COP]",
+        nvim_lsp = "[LSP]",
+        buffer = "[BUF]",
+        fuzzy_buffer = "[BUF]",
+      })
+    }),
+  },
 })
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
