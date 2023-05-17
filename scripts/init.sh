@@ -33,7 +33,7 @@ if [[ ! -e ~/.config/nvim/init.vim ]]; then
 fi
 
 if [[ ! -e ~/.vimrc ]]; then
-  echo "source ~/.vim/vimrc" > ~/.vimrc
+  echo "source ~/.vim/.vimrc" > ~/.vimrc
 fi
 
 PATH=~/bin:$PATH
