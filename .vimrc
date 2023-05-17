@@ -25,8 +25,6 @@ set guicursor=i:block
 set signcolumn=yes
 filetype plugin indent on
 
-runtime macros/matchit.vim
-
 let mapleader = ","
 
 set wildignore+=*.class,*.o,*.tmp
@@ -81,8 +79,20 @@ Plug 'cespare/vim-toml'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'folke/which-key.nvim'
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'github/copilot.vim'
+" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+" Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'tzachar/fuzzy.nvim'
+Plug 'tzachar/cmp-fuzzy-buffer'
+Plug 'tzachar/cmp-fuzzy-path'
 call plug#end()
 
 set background=dark
@@ -245,11 +255,10 @@ nnoremap <space>t :Files<CR>
 nnoremap <space>g :Ag 
 nnoremap <space>b :Buffers<CR>
 
-
 " autocmd CompleteDone * pclose
 
 
-"===============================================================================
-" LSP
-"===============================================================================
 lua require('lsp')
+" lua require('coq_complete')
+lua require('cmp_complete')
+lua require('packer_plugins')
