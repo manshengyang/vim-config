@@ -1,14 +1,34 @@
 #!/bin/bash
 set -e
 
-if [[ ! -e ~/bin/vim ]]; then
-  mkdir -p ~/bin
-  ln -sf $(which nvim) ~/bin/vim
-  echo "created ~/bin/vim"
+if [[ $(uname) == "Darwin" ]]; then
+  if ! $(which nvim); then
+    brew install nvim
+  fi
+else
+  if ! $(which nvim); then
+    echo "installing neovim"
+    cd ~/.vim
+    wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+    tar xf nvim-linux64.tar.gz
+    mv nvim-linux64 nvim
+    rm nvim-linux64.tar.gz
+    mkdir -p ~/bin
+    ln -sf $(pwd)/nvim/bin/nvim ~/bin/nvim
+    ln -sf $(pwd)/nvim/bin/nvim ~/bin/vim
+    echo "installed neovim"
+  elif [[ ! -e ~/bin/vim ]]; then
+    mkdir -p ~/bin
+    ln -sf $(which nvim) ~/bin/vim
+    echo "linked vim to nvim"
+  fi
 fi
 
 if [[ ! -e ~/.config/nvim/init.vim ]]; then
   mkdir -p ~/.config/nvim
   echo "source ~/.vimrc" > ~/.config/nvim/init.vim
-  echo "created init.vim"
+  echo "created ~/.config/nvim/init.vim"
 fi
+
+nvim --headless +PlugInstall +qall
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
