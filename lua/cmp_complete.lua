@@ -34,7 +34,7 @@ cmp.setup({
     ['<S-Tab>'] = cmp.mapping.select_prev_item(),
   }),
   sources = cmp.config.sources({
-    { name = "copilot" },
+    -- { name = "copilot" },
     { name = 'nvim_lsp' },
     { name = 'fuzzy_buffer' },
     { name = 'path' },
@@ -44,7 +44,7 @@ cmp.setup({
     format = lspkind.cmp_format({
       mode = "symbol_text",
       menu = ({
-        copilot = "[COP]",
+        -- copilot = "[COP]",
         nvim_lsp = "[LSP]",
         buffer = "[BUF]",
         fuzzy_buffer = "[BUF]",

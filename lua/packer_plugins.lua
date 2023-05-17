@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
     config = function()
       require("copilot").setup({
         panel = {
-          enabled = false,
+          enabled = true,
           auto_refresh = false,
           keymap = {
             jump_prev = "[[",
@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
           },
         },
         suggestion = {
-          enabled = false,
+          enabled = true,
           auto_trigger = true,
           debounce = 75,
           keymap = {
@@ -52,13 +52,13 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use {
-    "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua" },
-    config = function ()
-      require("copilot_cmp").setup()
-    end
-  }
+  -- use {
+  --   "zbirenbaum/copilot-cmp",
+  --   after = { "copilot.lua" },
+  --   config = function ()
+  --     require("copilot_cmp").setup()
+  --   end
+  -- }
 
   vim.cmd([[
     augroup packer_user_config

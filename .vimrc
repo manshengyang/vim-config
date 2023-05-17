@@ -83,7 +83,6 @@ Plug 'cespare/vim-toml'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'folke/which-key.nvim'
-Plug 'github/copilot.vim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 " Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
