@@ -75,7 +75,20 @@ cmp.setup.cmdline(':', {
 local lsp = require "lspconfig"
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 lsp.pyright.setup({
+  on_attach = on_attach,
   capabilities = capabilities,
+  settings = {
+    pyright = {
+      autoImportCompletion = true,
+    },
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "openFilesOnly",
+        typeCheckingMode = "off",
+      }
+    }
+  }
 })
 lsp.clangd.setup({
   capabilities = capabilities,
