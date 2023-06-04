@@ -265,6 +265,9 @@ nnoremap <space>u :GFiles<CR>
 nnoremap <space>t :Files<CR>
 nnoremap <space>g :Ag 
 nnoremap <space>b :Buffers<CR>
+nnoremap <space>h :History<CR>
+nnoremap <space>c :Commands<CR>
+nnoremap <space>/ :BLines<CR>
 
 " autocmd CompleteDone * pclose
 
