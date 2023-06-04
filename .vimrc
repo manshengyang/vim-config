@@ -145,17 +145,6 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
 " }}}
 
-" in next ()
-onoremap in( :<c-u>normal! f(vi(<cr>
-" in prev ()
-onoremap il( :<c-u>normal! F)vi<cr>
-" around next ()
-onoremap an( :<c-u>normal! f(va(<cr>
-" around prev ()
-onoremap al( :<c-u>normal! F)va(<cr>
-" next abc@abc
-onoremap n@ :<c-u>execute "normal! /\\S\\+@\\S\\+\\.\\w\\+\r:nohlsearch\rv5e"<cr>
-
 augroup filetype_mappings
   au!
   au BufEnter,BufNew *.rabl,Gemfile,*.jbuilder,*.god setlocal filetype=ruby
@@ -227,11 +216,6 @@ nnoremap <c-h> :SidewaysLeft<CR>
 nnoremap <c-l> :SidewaysRight<CR>
 
 "===============================================================================
-" ocaml
-"===============================================================================
-au FileType ocaml setlocal commentstring=(*\ %s\ *)
-
-"===============================================================================
 " FSwitch
 "===============================================================================
 augroup fswitch
@@ -261,6 +245,17 @@ let $FZF_DEFAULT_OPTS="--bind ctrl-b:page-up,ctrl-f:page-down,
       \ctrl-u:half-page-up,ctrl-d:half-page-down,
       \ctrl-k:up,ctrl-j:down"
 let g:fzf_preview_window = ['up,40%', 'ctrl-/']
+
+function! s:fzfdir(dir)
+  let wrapped = fzf#wrap('dir', {
+  \ 'source':  'find . -type d',
+  \ 'dir':     a:dir,
+  \ 'options': '-m --prompt "Dir> "'
+  \}, 0)
+  return fzf#run(wrapped)
+endfunction
+:command -nargs=? -complete=dir -bang Dirs call s:fzfdir(<q-args>)
+
 nnoremap <space>u :GFiles<CR>
 nnoremap <space>t :Files<CR>
 nnoremap <space>g :Ag 
@@ -268,6 +263,7 @@ nnoremap <space>b :Buffers<CR>
 nnoremap <space>h :History<CR>
 nnoremap <space>c :Commands<CR>
 nnoremap <space>/ :BLines<CR>
+nnoremap <space>d :Dirs<CR>
 
 " autocmd CompleteDone * pclose
 
