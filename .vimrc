@@ -255,6 +255,7 @@ function! s:fzfdir(dir)
   return fzf#run(wrapped)
 endfunction
 :command -nargs=? -complete=dir -bang Dirs call s:fzfdir(<q-args>)
+:command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, "-U --follow", fzf#vim#with_preview(), <bang>0)
 
 nnoremap <space>u :GFiles<CR>
 nnoremap <space>t :Files<CR>
