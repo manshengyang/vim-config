@@ -85,9 +85,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'folke/which-key.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
-" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-" Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'onsails/lspkind.nvim'
 Plug 'hrsh7th/vim-vsnip'
@@ -269,7 +266,6 @@ nnoremap <space>d :Dirs<CR>
 " autocmd CompleteDone * pclose
 
 lua require('lsp')
-" lua require('coq_complete')
 lua require('cmp_complete')
 lua require('packer_plugins')
 lua require('lualine').setup({options={theme='powerline'}, sections={lualine_c={{'filename', file_status=true, path=1}}}})
