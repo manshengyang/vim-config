@@ -106,6 +106,10 @@ lsp.pyright.setup({
 })
 lsp.clangd.setup({
   capabilities = capabilities,
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
 })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(

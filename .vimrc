@@ -26,7 +26,7 @@ set showmode
 set fileencodings=utf-8,gbk
 set guicursor=i:block
 set signcolumn=yes
-set mouse=iv
+set mouse=
 filetype plugin indent on
 
 let mapleader = ","
