@@ -28,12 +28,12 @@ fi
 
 if [[ ! -e ~/.config/nvim/init.vim ]]; then
   mkdir -p ~/.config/nvim
-  echo "source ~/.vimrc" > ~/.config/nvim/init.vim
+  echo "source ~/.nvimrc" > ~/.config/nvim/init.vim
   echo "created ~/.config/nvim/init.vim"
 fi
 
-if [[ ! -e ~/.vimrc ]]; then
-  echo "source ~/.vim/.vimrc" > ~/.vimrc
+if [[ ! -e ~/.nvimrc ]]; then
+  echo "source ~/.vim/.vimrc" > ~/.nvimrc
 fi
 
 PATH=~/bin:$PATH
