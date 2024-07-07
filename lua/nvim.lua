@@ -5,8 +5,6 @@ require("lsp")
 
 require("cmp_complete")
 
-require("packer_plugins")
-
 require("lualine").setup({
   options = {
     theme = "powerline"
