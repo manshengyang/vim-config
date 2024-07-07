@@ -1,7 +1,5 @@
 *.swp
 .netrwhist
 /sessions
-/ftdetect/scfg.vim
-/syntax/scfg.vim
-/indent/scfg.vim
 /nvim
+/lib

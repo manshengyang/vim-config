@@ -100,6 +100,9 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'tzachar/fuzzy.nvim'
 Plug 'tzachar/cmp-fuzzy-buffer'
+Plug 'zbirenbaum/copilot.lua'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 call plug#end()
 
 set termguicolors
