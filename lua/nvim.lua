@@ -47,6 +47,12 @@ require("copilot").setup({
   },
 })
 
+require("CopilotChat.integrations.cmp").setup()
 require("CopilotChat").setup({
   debug = false,
+  mappings = {
+    complete = {
+      insert = '',
+    },
+  },
 })
