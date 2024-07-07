@@ -1,7 +1,7 @@
 *.swp
 .netrwhist
-/submodules/ack/*
 /sessions
 /ftdetect/scfg.vim
 /syntax/scfg.vim
 /indent/scfg.vim
+/nvim

@@ -1,3 +1,6 @@
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+
 set nocompatible
 
 " basic config
@@ -21,9 +24,10 @@ set wildmenu
 set ttimeoutlen=100
 set showmode
 set fileencodings=utf-8,gbk
+set guicursor=i:block
+set signcolumn=yes
+set mouse=
 filetype plugin indent on
-
-runtime macros/matchit.vim
 
 let mapleader = ","
 
@@ -58,17 +62,52 @@ set hlsearch
 " Press Space to turn off highlighting and clear any message already displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
-call pathogen#infect('~/.vim/submodules/')
-call pathogen#helptags()
+call plug#begin()
+Plug 'scrooloose/nerdtree'
+Plug 'AndrewRadev/sideways.vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-abolish'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
+Plug 'derekwyatt/vim-fswitch'
+Plug 'tpope/vim-fugitive'
+Plug 'pangloss/vim-javascript'
+Plug 'lervag/vim-latex'
+Plug 'xolox/vim-misc'
+Plug 'simnalamburt/vim-mundo'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'cespare/vim-toml'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'folke/which-key.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'neovim/nvim-lspconfig'
+Plug 'onsails/lspkind.nvim'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'tzachar/fuzzy.nvim'
+Plug 'tzachar/cmp-fuzzy-buffer'
+call plug#end()
 
-set background=dark
 colo solarized
+set t_ut=""
+set t_Co=256
+let g:solarized_termcolors=256
+set background=dark
 
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 highlight SpellBad cterm=underline gui=undercurl
-
-source ~/.vim/conf/statusline.vim
 
 " nnoremap <F2> :vertical wincmd f<cr>
 nnoremap <F2> :FSSplitRight<CR>
@@ -77,10 +116,6 @@ nnoremap <F4> :TlistToggle<CR>
 nnoremap <F7> :MundoToggle<CR>
 " remove trailing space
 nnoremap <F11> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-nnoremap <F12> :SyntasticCheck<CR>
-
-let g:session_autosave = 'yes'
-let g:session_autoload = 'yes'
 
 " beginning and end of the line
 nnoremap H ^
@@ -105,21 +140,7 @@ nnoremap <Leader>T :tabnew<CR>
 nnoremap <Leader>w :w<CR>
 " quit
 nnoremap <Leader>q :q<CR>
-
-nnoremap <Leader>d :YcmCompleter GoToDefinition<CR>
-nnoremap <Leader>i :YcmCompleter GoToImplementation<CR>
 " }}}
-
-" in next ()
-onoremap in( :<c-u>normal! f(vi(<cr>
-" in prev ()
-onoremap il( :<c-u>normal! F)vi<cr>
-" around next ()
-onoremap an( :<c-u>normal! f(va(<cr>
-" around prev ()
-onoremap al( :<c-u>normal! F)va(<cr>
-" next abc@abc
-onoremap n@ :<c-u>execute "normal! /\\S\\+@\\S\\+\\.\\w\\+\r:nohlsearch\rv5e"<cr>
 
 augroup filetype_mappings
   au!
@@ -192,27 +213,6 @@ nnoremap <c-h> :SidewaysLeft<CR>
 nnoremap <c-l> :SidewaysRight<CR>
 
 "===============================================================================
-" syntastic
-"===============================================================================
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [] }
-" let g:syntastic_ruby_checkers = ["rubocop"]
-let g:syntastic_html_tidy_ignore_errors = [
-      \ 'is not recognized', 'discarding unexpected', 'proprietary attribute', 'trimming empty',
-      \ 'is invalid']
-let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_typescript_tsc_args = "--experimentalDecorators"
-let g:syntastic_python_python_exec = 'python3'
-let g:syntastic_python_checkers = ['python']
-
-"===============================================================================
-" ocaml
-"===============================================================================
-au FileType ocaml setlocal commentstring=(*\ %s\ *)
-
-"===============================================================================
 " FSwitch
 "===============================================================================
 augroup fswitch
@@ -231,94 +231,41 @@ function! SetHppSwitch()
 endfunction
 
 "===============================================================================
-" ycm
-"===============================================================================
-let g:ycm_complete_in_comments = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 0
-let g:ycm_key_list_select_completion = ['<c-n>']
-let g:ycm_key_list_previous_completion = ['<c-p>']
-let g:ycm_filepath_completion_use_working_dir = 0
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_clangd_args=['--header-insertion=never']
-
-"===============================================================================
-" ultisnips
-"===============================================================================
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-"===============================================================================
 " easymotion
 "===============================================================================
 map - <Plug>(easymotion-prefix)
 
 "===============================================================================
-" Unite
+" Searches
 "===============================================================================
-let g:unite_update_time = 500
-let g:unite_source_history_yank_enable = 1
-let g:unite_source_grep_max_candidates = 1000
+let $FZF_DEFAULT_OPTS="--bind ctrl-b:page-up,ctrl-f:page-down,
+      \ctrl-u:half-page-up,ctrl-d:half-page-down,
+      \ctrl-k:up,ctrl-j:down"
+let g:fzf_preview_window = ['up,40%', 'ctrl-/']
 
-" do not use unite history
-let g:unite_source_history_source_enable = 0
-
-" do not search all files - too slow, use CommandT for that
-let g:unite_source_file_rec_max_cache_files = 10000
-call unite#custom#source('file_rec,file_rec/async', 'max_candidates', 10000)
-
-" ignore_globs is slow and it's redundant when already using ag
-call unite#custom#source('file_rec,file_rec/async', 'ignore_globs', '')
-
-call unite#custom#source('buffer,file,file_rec,file_rec/async,file_rec/git', 'matchers',
-      \ ['converter_relative_word', 'matcher_selecta'])
-call unite#custom#source('buffer,file,file_rec,file_rec/async,file_rec/git', 'sorters',
-      \'sorter_selecta')
-
-if executable('ag')
-  let g:unite_source_rec_async_command = ['ag',
-        \ '--follow', '--nocolor', '--nogroup', '--hidden', '--ignore', '.git', '-m', '1000',
-        \ '-g', '']
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--line-numbers --nocolor --nogroup --column -i --hidden'
-elseif executable('ack')
-  let g:unite_source_grep_command = 'ack'
-  let g:unite_source_grep_default_opts = '-i --nogroup --no-heading --no-color -k -H'
-endif
-
-au FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()
-  imap <buffer> <C-k> <Plug>(unite_select_previous_line)
-  imap <buffer> <C-j> <Plug>(unite_select_next_line)
+function! s:fzfdir(dir)
+  let wrapped = fzf#wrap('dir', {
+  \ 'source':  'find . -type d',
+  \ 'dir':     a:dir,
+  \ 'options': '-m --prompt "Dir> "'
+  \}, 0)
+  return fzf#run(wrapped)
 endfunction
+:command -nargs=? -complete=dir -bang Dirs call s:fzfdir(<q-args>)
+:command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, "-U --follow", fzf#vim#with_preview(), <bang>0)
 
-nnoremap <space>u :Unite -no-restore -start-insert file_rec/git buffer<CR>
-nnoremap <space>t :Unite -no-restore -start-insert file_rec/async<CR>
-nnoremap <space>d :Unite -no-restore -start-insert directory directory/new<CR>
-nnoremap <space>y :Unite -no-restore -start-insert history/yank register<CR>
-nnoremap <space>f :Unite -no-restore -start-insert -no-empty grep:%<CR>
-nnoremap <space>g :Unite -no-restore -no-empty grep:.<CR>
-nnoremap <space>a :Unite tab window<CR>
-nnoremap <space>b :Unite -no-restore -start-insert buffer<CR>
+nnoremap <space>u :GFiles<CR>
+nnoremap <space>t :Files<CR>
+nnoremap <space>g :Ag 
+nnoremap <space>b :Buffers<CR>
+nnoremap <space>h :History<CR>
+nnoremap <space>c :Commands<CR>
+nnoremap <space>/ :BLines<CR>
+nnoremap <space>d :Dirs<CR>
 
-"===============================================================================
-" Scala
-"===============================================================================
-" function! SortScalaImportOnWrite()
-"   au BufWritePre * :SortScalaImports
-" endfunction
+" autocmd CompleteDone * pclose
 
-augroup filetype_actions
-  au!
-  au FileType vim setlocal foldmethod=marker
-  " au FileType scala call SortScalaImportOnWrite()
-augroup END
-
-autocmd CompleteDone * pclose
-
-"===============================================================================
-" Rust
-"===============================================================================
-let g:rustfmt_autosave = 1
+lua require('lsp')
+lua require('cmp_complete')
+lua require('packer_plugins')
+lua require('lualine').setup({options={theme='powerline'}, sections={lualine_c={{'filename', file_status=true, path=1}}}})
