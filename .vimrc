@@ -112,10 +112,9 @@ colo solarized8
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 highlight SpellBad cterm=underline gui=undercurl
 
-" nnoremap <F2> :vertical wincmd f<cr>
 nnoremap <F2> :FSSplitRight<CR>
 nnoremap <F3> :NERDTreeToggle<CR>
-nnoremap <F4> :TlistToggle<CR>
+nnoremap <F4> :CopilotChatToggle<CR>
 nnoremap <F7> :MundoToggle<CR>
 " remove trailing space
 nnoremap <F11> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
@@ -265,7 +264,5 @@ nnoremap <space>h :History<CR>
 nnoremap <space>c :Commands<CR>
 nnoremap <space>/ :BLines<CR>
 nnoremap <space>d :Dirs<CR>
-
-" autocmd CompleteDone * pclose
 
 lua require('nvim')
