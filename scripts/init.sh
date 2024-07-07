@@ -8,7 +8,7 @@ if [[ ! $(which nvim) || "$FORCE_INSTALL" ]]; then
   else
     nvim="nvim-linux64"
   fi
-  nvim_version="0.9.5"
+  nvim_version="stable"
   cd ~/.vim
   # remove existing nvim dir
   rm -rf nvim

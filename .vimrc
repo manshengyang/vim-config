@@ -67,7 +67,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8', { 'branch': 'neovim' }
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
 Plug 'derekwyatt/vim-fswitch'
@@ -85,6 +85,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'folke/which-key.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'onsails/lspkind.nvim'
 Plug 'hrsh7th/vim-vsnip'
@@ -100,11 +102,9 @@ Plug 'tzachar/fuzzy.nvim'
 Plug 'tzachar/cmp-fuzzy-buffer'
 call plug#end()
 
-colo solarized
-set t_ut=""
-set t_Co=256
-let g:solarized_termcolors=256
+set termguicolors
 set background=dark
+colo solarized8
 
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 highlight SpellBad cterm=underline gui=undercurl
@@ -265,7 +265,4 @@ nnoremap <space>d :Dirs<CR>
 
 " autocmd CompleteDone * pclose
 
-lua require('lsp')
-lua require('cmp_complete')
-lua require('packer_plugins')
-lua require('lualine').setup({options={theme='powerline'}, sections={lualine_c={{'filename', file_status=true, path=1}}}})
+lua require('nvim')
