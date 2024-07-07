@@ -13,7 +13,7 @@ if [[ ! $(which nvim) || "$FORCE_INSTALL" ]]; then
   # remove existing nvim dir
   rm -rf nvim
   echo "installing neovim"
-  wget "https://github.com/neovim/neovim/releases/download/v${nvim_version}/${nvim}.tar.gz"
+  wget "https://github.com/neovim/neovim/releases/download/${nvim_version}/${nvim}.tar.gz"
   tar xf "${nvim}.tar.gz"
   mv "${nvim}" nvim
   rm "${nvim}.tar.gz"
