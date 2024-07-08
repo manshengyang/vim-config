@@ -29,6 +29,9 @@ set signcolumn=yes
 set mouse=
 filetype plugin indent on
 
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
 let mapleader = ","
 
 set wildignore+=*.class,*.o,*.tmp
@@ -63,7 +66,6 @@ set hlsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 call plug#begin()
-Plug 'scrooloose/nerdtree'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
@@ -85,7 +87,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'folke/which-key.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
-Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'onsails/lspkind.nvim'
@@ -103,6 +105,9 @@ Plug 'tzachar/cmp-fuzzy-buffer'
 Plug 'manshengyang/copilot.lua'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 set termguicolors
@@ -113,7 +118,7 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 highlight SpellBad cterm=underline gui=undercurl
 
 nnoremap <F2> :FSSplitRight<CR>
-nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <F3> :NvimTreeOpen<CR>
 nnoremap <F4> :CopilotChatToggle<CR>
 nnoremap <F7> :MundoToggle<CR>
 " remove trailing space
@@ -134,12 +139,8 @@ nnoremap <Leader>s :%s/
 nnoremap <Leader>ev :rightbelow vsplit $MYVIMRC<CR>G
 " source vimrc
 nnoremap <Leader>sv :source $MYVIMRC<CR>
-" append ; at the end of current line
-nnoremap <Leader>a; mqA;<Esc>`q
 " new tab
-nnoremap <Leader>T :tabnew<CR>
-" write
-nnoremap <Leader>w :w<CR>
+nnoremap <Leader>t :tabnew<CR>
 " quit
 nnoremap <Leader>q :q<CR>
 " }}}

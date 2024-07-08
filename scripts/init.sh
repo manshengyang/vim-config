@@ -20,5 +20,4 @@ fi
 echo "installing plugins"
 PATH=~/bin:$PATH
 nvim --headless +PlugInstall +qall
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 echo "installed plugins"
