@@ -45,6 +45,14 @@ require("copilot").setup({
       dismiss = "<C-]>",
     },
   },
+  filetypes = {
+    yaml = true,
+    markdown = true,
+    help = false,
+    gitcommit = false,
+    gitrebase = false,
+    ["."] = false,
+  },
 })
 
 require("CopilotChat.integrations.cmp").setup()
