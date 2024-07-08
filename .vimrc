@@ -108,6 +108,7 @@ Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.11.0'}
 call plug#end()
 
 set termguicolors
@@ -165,10 +166,17 @@ nnoremap <c-p> gT
 nnoremap <c-j> :tabm +1<CR>
 nnoremap <c-k> :tabm -1<CR>
 
-" copy
-vnoremap <c-v> "*y
-nmap <c-c> :.w !pbcopy<CR><CR>
-vmap <c-c> :w !pbcopy<CR><CR>
+" Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+
+" Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
 
 " magic search
 nnoremap / /\v
@@ -179,6 +187,9 @@ cnoremap <c-n> <Down>
 cnoremap <c-p> <Up>
 cnoremap <c-j> <Left>
 cnoremap <c-l> <Right>
+
+" use esc to exit terminal mode
+tnoremap <Esc> <C-\><C-n>
 
 "===============================================================================
 " foldcolumn

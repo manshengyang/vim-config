@@ -138,3 +138,7 @@ require'nvim-treesitter.configs'.setup({
     },
   },
 })
+
+require("toggleterm").setup({
+  open_mapping = [[<c-\>]],
+})
