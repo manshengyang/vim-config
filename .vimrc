@@ -119,7 +119,7 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 highlight SpellBad cterm=underline gui=undercurl
 
 nnoremap <F2> :FSSplitRight<CR>
-nnoremap <F3> :NvimTreeOpen<CR>
+nnoremap <F3> :NvimTreeToggle<CR>
 nnoremap <F4> :CopilotChatToggle<CR>
 nnoremap <F7> :MundoToggle<CR>
 " remove trailing space
