@@ -82,6 +82,9 @@ local function nvim_on_attach(bufnr)
 end
 require("nvim-tree").setup({
   on_attach = nvim_on_attach,
+  actions = {
+    change_dir = { enable = false },
+  },
 })
 
 vim.o.timeout = true
