@@ -106,9 +106,10 @@ Plug 'manshengyang/copilot.lua'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.11.0'}
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim', {'branch': 'v3.x'}
 call plug#end()
 
 set termguicolors
@@ -119,7 +120,7 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 highlight SpellBad cterm=underline gui=undercurl
 
 nnoremap <F2> :FSSplitRight<CR>
-nnoremap <F3> :NvimTreeToggle<CR>
+nnoremap <F3> :Neotree toggle<CR>
 nnoremap <F4> :CopilotChatToggle<CR>
 nnoremap <F7> :MundoToggle<CR>
 " remove trailing space
