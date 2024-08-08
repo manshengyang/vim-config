@@ -110,6 +110,7 @@ lsp.clangd.setup({
     "clangd",
     "--offset-encoding=utf-16",
   },
+  filetypes = { "c", "cpp", "objc", "objcpp" },
 })
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
