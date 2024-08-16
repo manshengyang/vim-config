@@ -109,7 +109,9 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.11.0'}
 Plug 'MunifTanjim/nui.nvim'
-Plug 'nvim-neo-tree/neo-tree.nvim', {'branch': 'v3.x'}
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 set termguicolors
@@ -120,7 +122,7 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 highlight SpellBad cterm=underline gui=undercurl
 
 nnoremap <F2> :FSSplitRight<CR>
-nnoremap <F3> :Neotree toggle<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
 nnoremap <F4> :CopilotChatToggle<CR>
 nnoremap <F7> :MundoToggle<CR>
 " remove trailing space
