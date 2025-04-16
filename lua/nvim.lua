@@ -55,9 +55,9 @@ require("copilot").setup({
   },
 })
 
-require("CopilotChat.integrations.cmp").setup()
 require("CopilotChat").setup({
   debug = false,
+  chat_autocomplete = true,
   mappings = {
     complete = {
       insert = '',
