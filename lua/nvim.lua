@@ -125,3 +125,15 @@ require'nvim-treesitter.configs'.setup({
 require("toggleterm").setup({
   open_mapping = [[<c-\>]],
 })
+
+require("avante").setup({
+  provider = "copilot",
+  vendors = {
+    deepseek = {
+      __inherited_from = "openai",
+      api_key_name = "DEEPSEEK_API_KEY",
+      endpoint = "https://api.deepseek.com",
+      model = "deepseek-coder",
+    },
+  },
+})
