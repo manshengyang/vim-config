@@ -1,5 +1,4 @@
 require("mason").setup({})
-require("mason-lspconfig").setup({})
 
 require("lsp")
 
@@ -126,6 +125,7 @@ require("toggleterm").setup({
   open_mapping = [[<c-\>]],
 })
 
+vim.opt.laststatus=3
 require("avante").setup({
   provider = "copilot",
   vendors = {
@@ -136,4 +136,8 @@ require("avante").setup({
       model = "deepseek-coder",
     },
   },
+})
+
+require("render-markdown").setup({
+  file_type = { "markdown", "Avante" },
 })

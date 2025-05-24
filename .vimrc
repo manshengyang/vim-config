@@ -88,7 +88,6 @@ Plug 'folke/which-key.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
-Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'onsails/lspkind.nvim'
 Plug 'hrsh7th/vim-vsnip'
@@ -127,7 +126,8 @@ highlight SpellBad cterm=underline gui=undercurl
 
 nnoremap <F2> :FSSplitRight<CR>
 nnoremap <F3> :NERDTreeToggle<CR>
-nnoremap <F4> :CopilotChatToggle<CR>
+nnoremap <F4> :AvanteToggle<CR>
+nnoremap <F5> :CopilotChatToggle<CR>
 nnoremap <F7> :MundoToggle<CR>
 " remove trailing space
 nnoremap <F11> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
