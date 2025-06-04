@@ -125,7 +125,7 @@ require("toggleterm").setup({
   open_mapping = [[<c-\>]],
 })
 
-vim.opt.laststatus=3
+vim.opt.laststatus = 3
 require("avante").setup({
   provider = "copilot",
   vendors = {
@@ -139,5 +139,5 @@ require("avante").setup({
 })
 
 require("render-markdown").setup({
-  file_type = { "markdown", "Avante" },
+  file_types = { "markdown", "Avante" },
 })
