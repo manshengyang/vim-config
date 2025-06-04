@@ -10,7 +10,7 @@ if [[ ! $(which nvim) || "$FORCE_INSTALL" ]]; then
       nvim="nvim-macos-x86_64"
     fi
   else
-    nvim="nvim-linux64"
+    nvim="nvim-linux-x86_64"
   fi
   nvim_version="stable"
   cd ~/.vim

@@ -128,7 +128,7 @@ require("toggleterm").setup({
 vim.opt.laststatus = 3
 require("avante").setup({
   provider = "copilot",
-  vendors = {
+  providers = {
     deepseek = {
       __inherited_from = "openai",
       api_key_name = "DEEPSEEK_API_KEY",
