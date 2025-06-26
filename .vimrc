@@ -273,11 +273,14 @@ function! s:fzfdir(dir)
   return fzf#run(wrapped)
 endfunction
 :command -nargs=? -complete=dir -bang Dirs call s:fzfdir(<q-args>)
-:command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, "-U --follow", fzf#vim#with_preview(), <bang>0)
+:command! -bang -nargs=* Rg call fzf#vim#grep(
+      \ 'rg --column --line-number --no-heading --color=always --smart-case --no-ignore-vcs --follow -- ' .
+      \ fzf#shellescape(<q-args>),
+      \ fzf#vim#with_preview(), <bang>0)
 
 nnoremap <space>u :GFiles<CR>
 nnoremap <space>t :Files<CR>
-nnoremap <space>g :Ag 
+nnoremap <space>g :Rg 
 nnoremap <space>b :Buffers<CR>
 nnoremap <space>h :History<CR>
 nnoremap <space>c :Commands<CR>
