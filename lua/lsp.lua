@@ -1,5 +1,3 @@
-local lsp = require "lspconfig"
-
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -39,9 +37,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- Set up lspconfig.
-local lsp = require "lspconfig"
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-lsp.pyright.setup({
+vim.lsp.config("pyright", {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -58,7 +55,7 @@ lsp.pyright.setup({
     }
   }
 })
-lsp.clangd.setup({
+vim.lsp.config("clangd", {
   capabilities = capabilities,
   cmd = {
     "clangd",
@@ -66,7 +63,7 @@ lsp.clangd.setup({
   },
   filetypes = { "c", "cpp", "objc", "objcpp" },
 })
-lsp.rust_analyzer.setup({})
+vim.lsp.config("rust-analyzer", {})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
