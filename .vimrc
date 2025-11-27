@@ -115,6 +115,7 @@ Plug 'stevearc/dressing.nvim'
 Plug 'MeanderingProgrammer/render-markdown.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 set termguicolors
@@ -274,7 +275,7 @@ function! s:fzfdir(dir)
 endfunction
 :command -nargs=? -complete=dir -bang Dirs call s:fzfdir(<q-args>)
 :command! -bang -nargs=* Rg call fzf#vim#grep(
-      \ 'rg --column --line-number --no-heading --color=always --smart-case --no-ignore-vcs --follow -- ' .
+      \ 'rg --column --line-number --no-heading --color=always --smart-case --no-ignore-vcs --hidden --follow -- ' .
       \ fzf#shellescape(<q-args>),
       \ fzf#vim#with_preview(), <bang>0)
 
@@ -288,3 +289,6 @@ nnoremap <space>/ :BLines<CR>
 nnoremap <space>d :Dirs<CR>
 
 lua require('nvim')
+
+au FileType python setlocal indentexpr=
+au FileType python TSBufEnable indent
