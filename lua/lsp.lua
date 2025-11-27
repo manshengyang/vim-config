@@ -38,6 +38,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- Set up lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+vim.lsp.enable("pyright")
 vim.lsp.config("pyright", {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -55,6 +56,7 @@ vim.lsp.config("pyright", {
     }
   }
 })
+vim.lsp.enable("clangd")
 vim.lsp.config("clangd", {
   capabilities = capabilities,
   cmd = {
@@ -63,6 +65,7 @@ vim.lsp.config("clangd", {
   },
   filetypes = { "c", "cpp", "objc", "objcpp" },
 })
+vim.lsp.enable("rust-analyzer")
 vim.lsp.config("rust-analyzer", {})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
