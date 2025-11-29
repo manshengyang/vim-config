@@ -116,6 +116,7 @@ Plug 'MeanderingProgrammer/render-markdown.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 Plug 'editorconfig/editorconfig-vim'
+Plug 'folke/trouble.nvim'
 call plug#end()
 
 set termguicolors
@@ -290,5 +291,5 @@ nnoremap <space>d :Dirs<CR>
 
 lua require('nvim')
 
-au FileType python setlocal indentexpr=
+" au FileType python setlocal indentexpr=
 au FileType python TSBufEnable indent
