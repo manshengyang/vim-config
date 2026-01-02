@@ -125,23 +125,6 @@ require("toggleterm").setup({
   open_mapping = [[<c-\>]],
 })
 
-vim.opt.laststatus = 3
-require("avante").setup({
-  provider = "copilot",
-  providers = {
-    deepseek = {
-      __inherited_from = "openai",
-      api_key_name = "DEEPSEEK_API_KEY",
-      endpoint = "https://api.deepseek.com",
-      model = "deepseek-coder",
-    },
-  },
-})
-
-require("render-markdown").setup({
-  file_types = { "markdown", "Avante" },
-})
-
 require("trouble").setup({})
 vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { silent = true, desc = "Workspace Diagnostics" })
 vim.keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { silent = true, desc = "Buffer Diagnostics" })

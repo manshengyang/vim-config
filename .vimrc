@@ -105,7 +105,7 @@ Plug 'manshengyang/copilot.lua'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' }
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'master'}
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.11.0'}
 Plug 'MunifTanjim/nui.nvim'
 Plug 'preservim/nerdtree'
@@ -114,7 +114,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'stevearc/dressing.nvim'
 Plug 'MeanderingProgrammer/render-markdown.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
-Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'folke/trouble.nvim'
 call plug#end()
@@ -128,7 +127,6 @@ highlight SpellBad cterm=underline gui=undercurl
 
 nnoremap <F2> :FSSplitRight<CR>
 nnoremap <F3> :NERDTreeToggle<CR>
-nnoremap <F4> :AvanteToggle<CR>
 nnoremap <F5> :CopilotChatToggle<CR>
 nnoremap <F7> :MundoToggle<CR>
 " remove trailing space
