@@ -67,6 +67,8 @@ vim.lsp.config("clangd", {
 })
 vim.lsp.enable("rust-analyzer")
 vim.lsp.config("rust-analyzer", {})
+vim.lsp.enable("groove-langserver")
+vim.lsp.config("groove-langserver", {})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {

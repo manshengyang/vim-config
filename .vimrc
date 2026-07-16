@@ -55,10 +55,10 @@ let g:no_google_python_indent = 1
 syntax on
 
 " trailing spaces
-augroup trailing_space_syntax
-  au!
-  au Syntax * syn match ExtraWhitespace /\s\+$/ containedin=ALL
-augroup END
+" augroup trailing_space_syntax
+"   au!
+"   au Syntax * syn match ExtraWhitespace /\s\+$/ containedin=ALL
+" augroup END
 
 set incsearch
 set hlsearch
@@ -70,6 +70,7 @@ Plug 'AndrewRadev/sideways.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-abolish'
 Plug 'lifepillar/vim-solarized8', { 'branch': 'neovim' }
+Plug 'folke/tokyonight.nvim'
 Plug 'tpope/vim-commentary'
 Plug 'easymotion/vim-easymotion'
 Plug 'derekwyatt/vim-fswitch'
@@ -116,11 +117,12 @@ Plug 'MeanderingProgrammer/render-markdown.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'folke/trouble.nvim'
+Plug 'dmtrKovalenko/fff.nvim', { 'do': ':lua require([[fff.download]]).download_or_build_binary()' }
 call plug#end()
 
 set termguicolors
 set background=dark
-colo solarized8
+colo tokyonight
 
 highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
 highlight SpellBad cterm=underline gui=undercurl
@@ -289,5 +291,5 @@ nnoremap <space>d :Dirs<CR>
 
 lua require('nvim')
 
-" au FileType python setlocal indentexpr=
+au FileType python setlocal indentexpr=
 au FileType python TSBufEnable indent

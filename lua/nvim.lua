@@ -6,7 +6,7 @@ require("cmp_complete")
 
 require("lualine").setup({
   options = {
-    theme = "powerline"
+    theme = "tokyonight"
   },
   sections = {
     lualine_c = {
@@ -84,6 +84,7 @@ require'nvim-treesitter.configs'.setup({
     "cpp",
     "bash",
   },
+  auto_install = true,
   highlight = {
     enable = true,
 
@@ -128,3 +129,15 @@ require("toggleterm").setup({
 require("trouble").setup({})
 vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { silent = true, desc = "Workspace Diagnostics" })
 vim.keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { silent = true, desc = "Buffer Diagnostics" })
+
+local fff_ok, fff = pcall(require, "fff")
+if fff_ok then
+  fff.setup({})
+  vim.keymap.set("n", "ff", function() require("fff").find_files() end, { desc = "Find files" })
+  vim.keymap.set("n", "fg", function() require("fff").live_grep() end, { desc = "Live grep" })
+  vim.keymap.set("n", "fc", function() require("fff").live_grep({ query = vim.fn.expand("<cword>") }) end, { desc = "Grep current word" })
+end
+
+require("render-markdown").setup({
+  file_types = { "markdown" },
+})
