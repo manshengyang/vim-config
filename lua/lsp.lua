@@ -1,8 +1,8 @@
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end)
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
@@ -70,13 +70,11 @@ vim.lsp.config("rust-analyzer", {})
 vim.lsp.enable("groove-langserver")
 vim.lsp.config("groove-langserver", {})
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    signs = {
-      severity = {min = vim.diagnostic.severity.HINT}
-    },
-    virtual_text = {
-      severity = {min = vim.diagnostic.severity.WARN}
-    },
-  }
-)
+vim.diagnostic.config({
+  signs = {
+    severity = {min = vim.diagnostic.severity.HINT}
+  },
+  virtual_text = {
+    severity = {min = vim.diagnostic.severity.WARN}
+  },
+})

@@ -106,7 +106,7 @@ Plug 'manshengyang/copilot.lua'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'main' }
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'master'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate', 'branch': 'main'}
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.11.0'}
 Plug 'MunifTanjim/nui.nvim'
 Plug 'preservim/nerdtree'
@@ -291,5 +291,4 @@ nnoremap <space>d :Dirs<CR>
 
 lua require('nvim')
 
-au FileType python setlocal indentexpr=
-au FileType python TSBufEnable indent
+au FileType python setlocal indentexpr=v:lua.require'nvim-treesitter'.indentexpr()
