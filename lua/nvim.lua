@@ -54,16 +54,6 @@ require("copilot").setup({
   },
 })
 
-require("CopilotChat").setup({
-  debug = false,
-  chat_autocomplete = true,
-  mappings = {
-    complete = {
-      insert = '',
-    },
-  },
-})
-
 require("ibl").setup()
 
 vim.o.timeout = true
