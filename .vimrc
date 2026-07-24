@@ -116,7 +116,6 @@ Plug 'MeanderingProgrammer/render-markdown.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'folke/trouble.nvim'
-Plug 'dmtrKovalenko/fff.nvim', { 'do': ':lua require([[fff.download]]).download_or_build_binary()' }
 call plug#end()
 
 set termguicolors
